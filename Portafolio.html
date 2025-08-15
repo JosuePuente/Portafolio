@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Josué Puente - Portafolio Multimedia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-bg {
+            background: rgb(17 24 39 / var(--tw-bg-opacity, 1));
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .skill-bar {
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #3a7bd5, #00d2ff);
+            border-radius: 4px;
+            transition: width 2s ease-in-out;
+        }
+        
+        .typing-effect {
+            border-right: 2px solid #3a7bd5;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { border-color: #3a7bd5; }
+            51%, 100% { border-color: transparent; }
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: rgb(17 24 39 / var(--tw-bg-opacity, 1));
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .project-overlay {
+            background: rgba(63, 64, 65, 0.9);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+        
+        .contact-form input, .contact-form textarea {
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form input:focus, .contact-form textarea:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(58, 123, 213, 0.1);
+        }
+        
+        .section-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .section-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section-reveal.revealed.sobre-mi {
+            background-color: rgb(255 255 255);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .job { 
+            margin-bottom: 25px; 
+            padding-left: 18px;
+            border-left: 3px solid #3d3e3e;
+           
+        }
+       
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold bg-clip-text text-transparent" style="color: #3c424e;">
+                    Josué Darío Puente Castillo
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="nav-link text-gray-700 hover:text-blue-600">Inicio</a>
+                    <a href="#sobre-mi" class="nav-link text-gray-700 hover:text-blue-600">Sobre Mí</a>
+                    <a href="#experiencia" class="nav-link text-gray-700 hover:text-blue-600">Experiencia</a>
+                    <a href="#habilidades" class="nav-link text-gray-700 hover:text-blue-600">Habilidades</a>
+                    <a href="#proyectos" class="nav-link text-gray-700 hover:text-blue-600">Proyectos</a>
+                    <a href="#contacto" class="nav-link text-gray-700 hover:text-blue-600">Contacto</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#inicio" class="block py-2 text-gray-700 hover:text-blue-600">Inicio</a>
+                <a href="#sobre-mi" class="block py-2 text-gray-700 hover:text-blue-600">Sobre Mí</a>
+                <a href="#experiencia" class="block py-2 text-gray-700 hover:text-blue-600">Experiencia</a>
+                <a href="#habilidades" class="block py-2 text-gray-700 hover:text-blue-600">Habilidades</a>
+                <a href="#proyectos" class="block py-2 text-gray-700 hover:text-blue-600">Proyectos</a>
+                <a href="#contacto" class="block py-2 text-gray-700 hover:text-blue-600">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="min-h-screen gradient-bg flex items-center justify-center relative overflow-hidden">
+        <div class="container mx-auto px-6 text-center text-white relative z-10">
+            <div class="mb-8">
+                <img src="Yo.jpg" alt="Foto profesional de Josué Puente, especialista en multimedia y animación digital, con vestimenta profesional" 
+                     class="w-48 h-48 rounded-full mx-auto border-4 border-white shadow-2xl object-cover"/>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">
+                Hola, soy <span class="typing-effect" id="typing-name">Josué Puente</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90">
+                Lic. en Multimedia y Animación Digital
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#proyectos" class="bg-white text-gray-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300">
+                    Ver Proyectos
+                </a>
+                <a href="#contacto" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-gray-600 transition duration-300">
+                    Contactar
+                </a>
+            </div>
+        </div>
+        <!-- Animated background elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full"></div>
+            <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-white/10 rounded-full"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre-mi" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="section-reveal sobre-mi bg-gray-50">
+                <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">Sobre Mí</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/99b8f63b-1ec8-4963-b20a-39c0a0ce48ae.png" alt="Espacio de trabajo moderno con equipo de modelado 3D, monitores múltiples y herramientas de diseño" 
+                             class="rounded-lg shadow-2xl"/>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6 text-gray-800">Licenciado en Multimedia y Animación Digital</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Soy un profesional apasionado por la producción audiovisual, el diseño gráfico y el desarrollo de aplicaciones interactivas. 
+                            Con experiencia en la enseñanza y en el marketing digital, busco siempre aprender y crecer en el ámbito creativo y tecnológico.
+                        </p>
+                        <p class="text-gray-600 mb-8 leading-relaxed">
+                            Mi formación en Multimedia y Animación Digital me ha permitido desarrollar habilidades en modelado 3D, 
+                            efectos visuales, y comunicación audiovisual. Tengo experiencia como docente universitario y en marketing digital.
+                        </p>
+                        <div class="text-center mb-6">
+                            <div class="text-3xl font-bold text-gray-600 mb-2">+5</div>
+                            <div class="text-gray-600">Años de Experiencia</div>
+                        </div>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <div class="bg-purple-200 p-2 rounded-lg text-gray-600">After Effects</div>
+                            <div class="bg-yellow-200 p-2 rounded-lg text-gray-600">Illustrator</div>
+                            <div class="bg-blue-200 p-2 rounded-lg text-gray-600">Photoshop</div>
+                            <div class="bg-green-200 p-2 rounded-lg text-gray-600">Maya</div>
+                            <div class="bg-red-200 p-2 rounded-lg text-gray-600">Blender</div>
+                            <div class="bg-orange-200 p-2 rounded-lg text-gray-600">Visual Studio Code</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+         
+                
+                
+    <!-- Experience Section -->
+    <section id="experiencia" class="py-20 bg-gray-50" style="margin-top: -5%;">
+        <div class="container mx-auto px-6">
+            <div class="section-reveal">
+                <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">Experiencia Profesional</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                    
+
+                <div class="job bg-white p-6 rounded-xl shadow-lg mb-6">
+                    <div class="flex items-center mb-4">
+                        <img src="https://i.pinimg.com/736x/32/d0/ad/32d0adaa0c146c18b20218d4e9208cbf.jpg" alt="Logo de la UANL" class="w-14 h-15 rounded mr-4" />
+                        <div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Docente</h3>
+                        <p class="font-bold mb-2 text-gray-800">Facultad de Artes Visuales, UANL (2025)</p>
+                    </div>
+                </div>
+                    <ul class="text-gray-600 space-y-2">
+                            <li>• Impartición temporal de materias: Modelado 3D, Lenguajes de Programación y Desarrollo de Aplicaciones</li>
+                            <li>• Elaboración de contenido académico y evaluación de proyectos prácticos</li>
+                            <li>• Mentoría en proyectos estudiantiles de diseño digital</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="job bg-white p-6 rounded-xl shadow-lg mb-6">
+                        <div class="flex items-center mb-4">
+                                <img src="https://media.licdn.com/dms/image/v2/C4E0BAQGAatZ0kuDeSw/company-logo_200_200/company-logo_200_200/0/1630615793604/soft_controls_international_logo?e=2147483647&v=beta&t=bUJRk4JJZUduFxWVJPRyLPwS74dCAn7cV36YND1Z6rs" alt="Logo SoftControls International" class="w-14 h-15 rounded mr-4" />
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Especialista en Marketing Digital</h3>
+                                <p class="font-bold mb-2 text-gray-800">Soft Controls International (2022-2023)</p>
+                            </div>
+                        </div>
+                                <ul class="text-gray-600 space-y-2">
+                                    <li>• Desarrollo de guiones creativos para campañas digitales y videos corporativos</li>
+                                    <li>• Edición y postproducción de contenido audiovisual para redes sociales</li>
+                                    <li>• Realización de grabaciones como videógrafo para spots publicitarios</li>
+                                    <li>• Locución y grabación de voz en off para materiales de marketing</li>
+                                    <li>• Coordinación de estrategias de difusión en plataformas digitales</li>
+                                </ul>
+                    </div>
+                    
+                    <div class="job bg-white p-6 rounded-xl shadow-lg mb-6">
+                        
+                        <div class="flex items-center mb-4">
+                                <img style="scale: 150%;" src="LOGO.png" alt="Logo Epicas Impresiones" class="w-14 h-15 rounded mr-4" />
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Impresión 3D</h3>
+                                <p class="font-bold mb-2 text-gray-800">Independiente (2023 - Actualidad)</p>
+                            </div>
+                        </div>
+                        
+                        <ul class="text-gray-600 space-y-2">
+                            <li>• Modelado 3D personalizado para piezas funcionales y decorativas</li>
+                            <li>• Producción de prototipos bajo pedido con diferentes materiales plásticos</li>
+                            <li>• Optimización de archivos 3D para impresión eficiente</li>
+                            <li>• Asesoría técnica en diseño de modelos imprimibles</li>
+                            <li>• Control de calidad y postprocesado de piezas terminadas</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="job bg-white p-6 rounded-xl shadow-lg mb-6">
+                       
+                       
+                        <div class="flex items-center mb-4">
+                            <img src="https://yt3.googleusercontent.com/tT9yb_TrsAarV5n-uzFQ8qqIbP4GwGLvqEWlVYQJK4v5t6Q4AsHby2klHhrteN3MjFUHgAO1BQ=s900-c-k-c0x00ffffff-no-rj" alt="Logo Canal 53" class="w-14 h-15 rounded mr-4" />
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Diseñador Gráfico</h3>
+                            <p class="font-bold mb-2 text-gray-800">Canal 53 TVUni (2016-2017)</p>
+                        </div>
+                    </div>
+
+                        <ul class="text-gray-600 space-y-2">
+                            <li>• Diseño y creación de elementos gráficos para transmisiones televisivas</li>
+                            <li>• Elaboración de cortinillas, supers y gráficos de continuidad</li>
+                            <li>• Desarrollo de identidad visual para programas y segmentos</li>
+                            <li>• Colaboración en equipo para proyectos de comunicación visual</li>
+                            <li>• Adaptación de gráficos para diferentes formatos de transmisión</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="habilidades" class="py-20 bg-gray-50"style="margin-top: -5%;>
+        <div class="container mx-auto px-6">
+            <div class="section-reveal">
+                <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">Habilidades Técnicas</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                          <!-- Multimedia Skills -->
+                          <div class="bg-gray-50 p-8 rounded-xl shadow-lg card-hover">
+                            <h3 class="text-xl font-semibold mb-6 text-gray-800 flex items-center">
+                                <i class="fas fa-video text-blue-600 mr-3"></i>
+                                Producción Audiovisual
+                            </h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <i class="fas fa-check-circle text-blue-600"></i>
+                                        <span class="text-gray-700">Edición y Postproducción</span>
+                                    </div>
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <i class="fas fa-check-circle text-blue-600"></i>
+                                        <span class="text-gray-700">Motion Graphics</span>
+                                    </div>
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <i class="fas fa-check-circle text-blue-600"></i>
+                                        <span class="text-gray-700">Efectos Visuales</span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+    
+                        <!-- 3D Skills -->
+                         <div class="bg-gray-50 p-8 rounded-xl shadow-lg card-hover">
+                            <h3 class="text-xl font-semibold mb-6 text-gray-800 flex items-center">
+                                <i class="fas fa-cube text-red-600 mr-3"></i>
+                                Modelado 3D
+                            </h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <i class="fas fa-check-circle text-red-600"></i>
+                                        <span class="text-gray-700">Blender</span>
+                                    </div>
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <i class="fas fa-check-circle text-red-600"></i>
+                                        <span class="text-gray-700">Maya</span>
+                                    </div>
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <i class="fas fa-check-circle text-red-600"></i>
+                                        <span class="text-gray-700">Impresión 3D</span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+    
+                        <!-- Design Skills -->
+                        <div class="bg-gray-50 p-8 rounded-xl shadow-lg card-hover">
+                            <h3 class="text-xl font-semibold mb-6 text-gray-800 flex items-center">
+                                <i class="fas fa-palette text-yellow-800 mr-3"></i>
+                                Diseño
+                            </h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <i class="fas fa-check-circle text-yellow-600"></i>
+                                        <span class="text-gray-700">Adobe Creative Suite</span>
+                                    </div>
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <i class="fas fa-check-circle text-yellow-600"></i>
+                                        <span class="text-gray-700">UI/UX Design</span>
+                                    </div>
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <i class="fas fa-check-circle text-yellow-600"></i>
+                                        <span class="text-gray-700">Branding</span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="proyectos" class="py-20 bg-gray-50" style="margin-top: -5%;">
+        <div class="container mx-auto px-6">
+            <div class="section-reveal">
+                <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">Proyectos Destacados</h2>
+                
+                <!-- Featured Projects -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-semibold mb-8 text-gray-800">Logros Destacados</h3>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- Project 1 -->
+                        <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden card-hover relative">
+                            <div class="relative">
+                                <img src="kefeito.jpg" alt="Cortometraje de efectos visuales con personajes animados en 3D y composición digital" 
+                                     class="w-full h-48 object-cover"/>
+                                <div class="project-overlay absolute inset-0 flex items-center justify-center">
+                                    <div class="text-center text-white">
+                                        <button class="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition duration-300 mr-3" onclick="openModal('https://www.youtube.com/embed/yntPGZ6W-z4')">
+                                            <i class="fas fa-eye mr-2"></i>Ver Demo
+                                        </button>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-semibold mb-3 text-gray-800">Cortometraje "Kefeito vs Covicho"</h4>
+                                <p class="text-gray-600 mb-4">Proyecto académico de Efectos Visuales I, seleccionado entre los mejores trabajos de ExpoLMAD 2022.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">After Effects</span>
+                                    <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">Blender</span>
+                                    <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">VFX</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden card-hover relative">
+                            <div class="relative">
+                                <img src="sin sentido.jpg" alt="Cortometraje experimental con integración de objetos 3D en escenas reales" 
+                                     class="w-full h-48 object-cover"/>
+                                <div class="project-overlay absolute inset-0 flex items-center justify-center">
+                                    <div class="text-center text-white">
+                                        <button class="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition duration-300 mr-3" onclick="openModal('https://www.youtube.com/embed/ZBQHfuvKNfk')">
+                                            <i class="fas fa-eye mr-2"></i>Ver Demo
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-semibold mb-3 text-gray-800">Cortometraje "Sin Sentido"</h4>
+                                <p class="text-gray-600 mb-4">Proyecto experimental reconocido por la integración creativa de escenas con objetos 3D (ExpoLMAD 2023).</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">After Effects</span>
+                                    <span class="bg-yellow-100 text-yellow-600 px-3 py-1 rounded-full text-sm">Compositing</span>
+                                    <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">3D Integration</span>
+                                </div>
+                            </div>
+                        </div>
+
+                       <!-- Project 3 -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden card-hover relative">
+                    <div class="relative">
+                        <img src="Triplemania (1).jpg" alt="Cobertura fotográfica y videográfica profesional de evento de lucha libre con iluminación dramática" 
+                            class="w-full h-48 object-cover"/>
+                        <div class="project-overlay absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <button class="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition duration-300 mr-3" onclick="openModalFb('https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1134930487820175%2F&show_text=false&width=267&t=0')">
+                                    <i class="fas fa-eye mr-2"></i>Ver Demo
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-3 text-gray-800">Lucha Libre AAA - Triplemania</h4>
+                        <p class="text-gray-600 mb-4">Captura de videos y fotografías durante el evento, proporcionando contenido de alta calidad para promocionales.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">Fotografía</span>
+                            <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">Videografía</span>
+                            <span class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm">Eventos</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+                <!-- Education Section -->
+                <br>
+                <br>
+                <br>
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-4xl font-bold text-center mb-8 text-gray-800">Educación</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-gray-800 p-6 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-graduation-cap text-gray-50 text-2xl mr-4"></i>
+                                <h4 class="text-xl font-semibold text-gray-50">Licenciatura en Multimedia y Animación Digital</h4>
+                            </div>
+                            <p class="text-gray-50 pl-10">Facultad de Ciencias Físico Matemáticas, UANL</p>
+                        </div>
+                        <div class="bg-gray-800 p-6 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-graduation-cap text-gray-50 text-2xl mr-4"></i>
+                                <h4 class="text-xl font-semibold text-gray-100">Técnico en Diseño Gráfico</h4>
+                            </div>
+                            <p class="text-gray-100 pl-10">Escuela Industrial y Preparatoria Técnica Pablo Livas, UANL</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+<!-- Contact Section -->
+<section id="contacto" class="py-20 bg-gray-50" style="margin-top: -10%;">
+    <div class="container mx-auto px-6">
+        <div class="section-reveal">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Información de Contacto</h2>
+            <div class="grid md:grid-cols-3 gap-12 text-center">
+                <div class="p-4">
+                    <div class="flex justify-center items-center text-gray-800 mb-4">
+                        <i class="fas fa-envelope text-xl mr-2"></i>
+                        <span class="text-lg">dari.puentec@gmail.com</span>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-center items-center text-gray-800 mb-4">
+                        <i class="fas fa-phone text-xl mr-2"></i>
+                        <span class="text-lg">+52 812 467 8343</span>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-center items-center text-gray-800 mb-4">
+                        <i class="fas fa-map-marker-alt text-xl mr-2"></i>
+                        <span class="text-lg">Monterrey, México</span>
+                    </div>
+                </div>
+            </div>
+            
+          
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="mt-8 p-4 bg-gray-900 backdrop-blur-md rounded-lg text-center">
+                <h3 class="text-2xl font-semibold text-gray-100 mb-4">Disponibilidad para reubicación y cambio de residencia.</h3>
+               
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Josué Puente. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+ <!-- Modal -->
+ <div id="videoModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+        <div class="relative">
+            <button id="closeModal" class="absolute top-2 right-2 text-gray-600 hover:text-gray-900">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <iframe id="videoFrame" width="760" height="400" src="" frameborder="0" allowfullscreen></iframe>
+           </div>
+    </div>
+</div>
+ <!-- Modal FB -->
+ <div id="videoModalFb" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+        <div class="relative">
+            <button id="closeModalFb" class="absolute top-2 right-2 text-gray-600 hover:text-gray-900">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <iframe id="videoFrameFb" width="360" height="450" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
+    <script>
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Typing effect
+        const typingElement = document.getElementById('typing-name');
+        const names = ['Josué Puente', 'Lic. Multimedia y Animación Digital','Diseñador Gráfico', 'Diseñador 3D', 'Editor de Video'];
+            let nameIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeEffect() {
+            const currentName = names[nameIndex];
+            
+            if (isDeleting) {
+                typingElement.textContent = currentName.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentName.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentName.length) {
+                setTimeout(() => isDeleting = true, 2000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                nameIndex = (nameIndex + 1) % names.length;
+            }
+
+            setTimeout(typeEffect, isDeleting ? 50 : 100);
+        }
+
+        // Start typing effect
+        typeEffect();
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Skill bars animation
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+                const width = bar.getAttribute('data-width');
+                bar.style.width = width + '%';
+            });
+        }
+
+        // Intersection Observer for reveal animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    
+                    // Animate skill bars when skills section is visible
+                    if (entry.target.closest('#habilidades')) {
+                        setTimeout(animateSkillBars, 500);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections with reveal animation
+        document.querySelectorAll('.section-reveal').forEach(section => {
+            observer.observe(section);
+        });
+
+        
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('#inicio');
+            const speed = scrolled * 0.5;
+            parallax.style.transform = `translateY(${speed}px)`;
+        });
+     
+        function openModal(videoUrl) {
+    const modal = document.getElementById('videoModal');
+    const videoFrame = document.getElementById('videoFrame');
+    videoFrame.src = videoUrl; // Establecer la URL del video
+    modal.classList.remove('hidden'); // Mostrar el modal
+}
+
+document.getElementById('closeModal').addEventListener('click', function() {
+    const modal = document.getElementById('videoModal');
+    const videoFrame = document.getElementById('videoFrame');
+    videoFrame.src = ""; // Limpiar la URL del video
+    modal.classList.add('hidden'); // Ocultar el modal
+});
+function openModalFb(videoUrl) {
+    const modal = document.getElementById('videoModalFb');
+    const videoFrame = document.getElementById('videoFrameFb');
+    videoFrame.src = videoUrl; // Establecer la URL del video
+    modal.classList.remove('hidden'); // Mostrar el modal
+}
+
+document.getElementById('closeModalFb').addEventListener('click', function() {
+    const modal = document.getElementById('videoModalFb');
+    const videoFrame = document.getElementById('videoFrameFb');
+    videoFrame.src = ""; // Limpiar la URL del video
+    modal.classList.add('hidden'); // Ocultar el modal
+});
+    </script>
+
+   
+
+</body>
+</html>
