@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos en Carrusel Modal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-16">
+        <!-- Botón para abrir la modal -->
+        <button id="openModalBtn" class="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition duration-300">
+            <i class="fas fa-eye mr-2"></i>Ver Proyectos en Carrusel
+        </button>
+
+        <!-- Modal -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 class="text-2xl font-semibold mb-8 text-gray-800 text-center">Logros Destacados</h2>
+                <div class="carousel">
+                    <!-- Flechas de navegación -->
+                    <button class="carousel-control carousel-control-prev" id="prevBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-control carousel-control-next" id="nextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="carousel-inner" id="carouselInner">
+                        <!-- Project 1 -->
+                        <div class="carousel-item">
+                            <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden card-hover relative max-w-lg mx-auto">
+                                <div class="relative">
+                                    <img src="kefeito.jpg" alt="Cortometraje de efectos visuales con personajes animados en 3D y composición digital" 
+                                         class="w-full h-48 object-cover"/>
+                                    <div class="project-overlay absolute inset-0 flex items-center justify-center">
+                                        <div class="text-center text-white">
+                                            <button class="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition duration-300 mr-3" onclick="openModal('https://www.youtube.com/embed/yntPGZ6W-z4')">
+                                                <i class="fas fa-eye mr-2"></i>Ver Demo
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <h4 class="text-xl font-semibold mb-3 text-gray-800">Cortometraje "Kefeito vs Covicho"</h4>
+                                    <p class="text-gray-600 mb-4">Proyecto académico de Efectos Visuales I, seleccionado entre los mejores trabajos de ExpoLMAD 2022.</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">After Effects</span>
+                                        <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">Blender</span>
+                                        <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">VFX</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="carousel-item">
+                            <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden card-hover relative max-w-lg mx-auto">
+                                <div class="relative">
+                                    <img src="sin sentido.jpg" alt="Cortometraje experimental con integración de objetos 3D en escenas reales" 
+                                         class="w-full h-48 object-cover"/>
+                                    <div class="project-overlay absolute inset-0 flex items-center justify-center">
+                                        <div class="text-center text-white">
+                                            <button class="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition duration-300 mr-3" onclick="openModal('https://www.youtube.com/embed/ZBQHfuvKNfk')">
+                                                <i class="fas fa-eye mr-2"></i>Ver Demo
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <h4 class="text-xl font-semibold mb-3 text-gray-800">Cortometraje "Sin Sentido"</h4>
+                                    <p class="text-gray-600 mb-4">Proyecto experimental reconocido por la integración creativa de escenas con objetos 3D (ExpoLMAD 2023).</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">After Effects</span>
+                                        <span class="bg-yellow-100 text-yellow-600 px-3 py-1 rounded-full text-sm">Compositing</span>
+                                        <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">3D Integration</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 3 -->
+                        <div class="carousel-item">
+                            <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden card-hover relative max-w-lg mx-auto">
+                                <div class="relative">
+                                    <img src="Triplemania (1).jpg" alt="Cobertura fotográfica y videográfica profesional de evento de lucha libre con iluminación dramática" 
+                                         class="w-full h-48 object-cover"/>
+                                    <div class="project-overlay absolute inset-0 flex items-center justify-center">
+                                        <div class="text-center text-white">
+                                            <button class="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition duration-300 mr-3" onclick="openModalFb('https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1134930487820175%2F&show_text=false&width=267&t=0')">
+                                                <i class="fas fa-eye mr-2"></i>Ver Demo
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <h4 class="text-xl font-semibold mb-3 text-gray-800">Lucha Libre AAA - Triplemania</h4>
+                                    <p class="text-gray-600 mb-4">Captura de videos y fotografías durante el evento, proporcionando contenido de alta calidad para promocionales.</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">Fotografía</span>
+                                        <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">Videografía</span>
+                                        <span class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm">Eventos</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Indicadores del carrusel -->
+                <div class="carousel-indicators">
+                    <span class="indicator active" data-slide="0"></span>
+                    <span class="indicator" data-slide="1"></span>
+                    <span class="indicator" data-slide="2"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para videos (YouTube/Facebook) -->
+        <div id="videoModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeVideoModal">&times;</span>
+                <iframe id="videoFrame" class="w-full h-64 md:h-80 object-cover" src="" frameborder="0" allowfullscreen style="object-fit: cover;"></iframe>
+            </div>
+        </div>
+        
+         <!-- Modal FB -->
+ <div id="videoModalFb" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden" style="z-index: 1001;">
+    <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+        <div class="relative">
+            <button id="closeModalFb" class="absolute top-2 right-2 text-gray-600 hover:text-gray-900">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <iframe id="videoFrameFb" width="267" height="476" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+    </div>
+
+    <script>
+        // Variables del modal principal
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("openModalBtn");
+        var span = document.getElementsByClassName("close")[0];
+
+        // Abrir modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // Cerrar modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Cerrar modal al hacer clic fuera
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Funcionalidad del carrusel
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+        const indicators = document.querySelectorAll('.indicator');
+        const totalSlides = slides.length;
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let autoSlideInterval;
+
+        function showSlide(index) {
+            const carouselInner = document.getElementById('carouselInner');
+            carouselInner.style.transform = `translateX(-${index * 100}%)`;
+            indicators.forEach((ind, i) => {
+                ind.classList.toggle('active', i === index);
+            });
+            currentSlide = index;
+        }
+
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(() => {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                showSlide(currentSlide);
+            }, 5000);
+        }
+
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
+        }
+
+        // Iniciar auto-slide al cargar
+        startAutoSlide();
+
+        // Event listeners para flechas
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+            resetAutoSlide();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+            resetAutoSlide();
+        });
+
+        // Event listeners para indicadores
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                showSlide(index);
+                resetAutoSlide();
+            });
+        });
+
+        // Funciones para abrir modales de video
+        function openModal(url) {
+            document.getElementById('videoFrame').src = url;
+            document.getElementById('videoModal').style.display = "block";
+        }
+
+        // Cerrar modal de video
+        document.getElementById('closeVideoModal').onclick = function() {
+            document.getElementById('videoModal').style.display = "none";
+            document.getElementById('videoFrame').src = "";
+        }
+        
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('videoModal')) {
+                document.getElementById('videoModal').style.display = "none";
+                document.getElementById('videoFrame').src = "";
+            }
+        }
+
+        // Función para abrir modal de Facebook
+        function openModalFb(videoUrl) {
+            const modal = document.getElementById('videoModalFb');
+            const videoFrame = document.getElementById('videoFrameFb');
+            videoFrame.src = videoUrl; // Establecer la URL del video
+            modal.classList.remove('hidden'); // Mostrar el modal
+        }
+
+        // Cerrar modal de Facebook
+        document.getElementById('closeModalFb').addEventListener('click', function() {
+            const modal = document.getElementById('videoModalFb');
+            const videoFrame = document.getElementById('videoFrameFb');
+            videoFrame.src = ""; // Limpiar la URL del video
+            modal.classList.add('hidden'); // Ocultar el modal
+        });
+
+        // Cerrar modal de Facebook al hacer clic fuera
+        document.getElementById('videoModalFb').addEventListener('click', function(event) {
+            if (event.target === this) {
+                const modal = document.getElementById('videoModalFb');
+                const videoFrame = document.getElementById('videoFrameFb');
+                videoFrame.src = ""; // Limpiar la URL del video
+                modal.classList.add('hidden'); // Ocultar el modal
+            }
+        });
+    </script>
+</body>
+</html>

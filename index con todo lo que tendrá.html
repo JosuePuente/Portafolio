@@ -195,383 +195,6 @@
         </div>
     </section>
 
-    <section id="proyectos" class="py-20 bg-gray-100 text-gray-800"style="margin-top: -15%;">
-        <div class="container mx-auto px-4 py-16">
-            <div class="section-reveal">
-                <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">Proyectos Destacados</h2>
-        
-            <div class="grid md:grid-cols-3 gap-8">
-        
-               <!-- TARJETA PRINCIPAL QUE ABRE EL MODAL -->
-            <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden card-hover cursor-pointer"
-            onclick="openModalTresProyectos()">
-            <div class="relative">    
-                <img src="Triplemania (1).jpg" class="w-full h-48 object-cover" />
-              
-                 <!-- Overlay con botón -->
-            <div class="project-overlay absolute inset-0 flex items-center justify-center">
-                <button 
-                    class="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition duration-300"
-                    onclick="event.stopPropagation(); openModalTresProyectos()"
-                    >
-                    <i class="fas fa-eye mr-2"></i>Ver Proyectos
-                </button>
-            </div>
-        </div>
-
-                <div class="p-6">
-                    <h4 class="text-xl font-semibold mb-3 text-gray-800">Logros Destacados</h4>
-                    <p class="text-gray-600">Proyectos audiovisuales desarrollados durante mi formación académica, reconocidos en la EXPO-LMAD. Además, un proyecto donde colaboré con la empresa de Lucha Libre AAA.</p>
-                </div>
-            </div>
-
-
-        
-        
-      
-                
-                <!-- TARJETA DE FOTOGRAFÍA -->
-                    <div class="project-card relative bg-white rounded-xl shadow-lg cursor-pointer overflow-hidden"
-                    onclick="openPhotoModal()">
-
-
-                    
-                    <div class="relative">    
-                        <img src="Fotos/Celso.jpg" class="w-full h-48 object-cover"/>
-                      
-                         <!-- Overlay con botón -->
-                    <div class="project-overlay absolute inset-0 flex items-center justify-center">
-                        <button 
-                            class="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition duration-300"
-                            onclick="event.stopPropagation(); openPhotoModal()"
-                            >
-                            <i class="fas fa-eye mr-2"></i>Ver Proyectos
-                        </button>
-                    </div>
-                </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-semibold mb-3 text-gray-800">Fotografía Profesional</h4>
-                            <p class="text-gray-600 mb-4">Sesiones, cobertura de eventos y fotografía comercial.</p>
-                        </div>
-                    </div>
-        
-              
-
-
-
-            
-                    <!-- PagWeb -->
-                    <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden card-hover relative">
-                        <div class="relative">
-                            <img src="pagwebCuteMedia.jpg" alt="Pagina web" 
-                                 class="w-full h-48 object-cover"/>
-                            <div class="project-overlayPagWeb absolute inset-0 flex items-center justify-center">
-                                <div class="text-center text-white">
-                                    <button 
-                                    class="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold
-                                           transition duration-300 transform hover:-translate-y-1
-                                           hover:bg-blue-600 hover:text-white shadow hover:shadow-lg"
-                                    onclick="openModalPagWeb('https://josuepuente.github.io/Prueba-de-seleccion-CuteDigitalMedia/')">
-                                    <i class="fas fa-eye mr-2"></i>Ver Página Responsiva
-                                </button>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                            <div class="p-6">
-                                <h4 class="text-xl font-semibold mb-3 text-gray-800">Diseño de página web para agencia digital (proyecto de práctica)</h4>
-                                <p class="text-gray-600 mb-4">Landing Page para una red de influencers, enfocada en diseño moderno, jerarquía visual clara y llamados a la acción efectivos.</p>
-                                <p class="text-gray-600">Ir a Página:</p>
-                                <p class="text-blue-600 mb-4" ><a href="https://josuepuente.github.io/Prueba-de-seleccion-CuteDigitalMedia/">https://josuepuente.github.io/Prueba-de-seleccion-CuteDigitalMedia/</a></p>
-                                
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">VisualStudio Code</span>
-          
-                                </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-
-
-     
-
-        </div>
-
-        <!-- MODAL -->
-<div id="modalTresProyectos" class="fixed inset-0 bg-black/60 flex items-center justify-center px-4 hidden">
-    
-    <div class="bg-white rounded-lg shadow-xl max-w-4xl w-full p-6 relative overflow-y-auto max-h-[90vh]">
-
-        <!-- Cerrar -->
-        <button class="absolute top-3 right-3 text-gray-600 text-2xl"
-                onclick="closeModalTresProyectos()">×</button>
-
-        <h2 class="text-2xl font-bold mb-5 text-gray-800">Mis Proyectos</h2>
-
-        <!-- Contenedor de las 3 tarjetas -->
-        <div class="grid md:grid-cols-3 gap-6">
-
-            <!-- TARJETA 1 -->
-            <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden relative">
-                <div class="relative">
-                    <img src="kefeito.jpg" class="w-full h-40 object-cover" />
-
-                    <div class="project-overlay absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black/50">
-                        <button class="bg-white text-blue-600 px-4 py-2 rounded-full font-semibold"
-                                onclick="openModalVideo('https://www.youtube.com/embed/yntPGZ6W-z4')">
-                            Ver Demo
-                        </button>
-                    </div>
-                </div>
-
-                <div class="p-4">
-                    <h4 class="text-lg font-semibold">Kefeito vs Covicho</h4>
-                    <p class="text-gray-600 text-sm">Proyecto académico de Efectos Visuales I, seleccionado entre los mejores trabajos de ExpoLMAD 2022.</p>
-                </div>
-            </div>
-
-            <!-- TARJETA 2 -->
-            <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden relative">
-                <div class="relative">
-                    <img src="sin sentido.jpg" class="w-full h-40 object-cover" />
-
-                    <div class="project-overlay absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black/50">
-                        <button class="bg-white text-blue-600 px-4 py-2 rounded-full font-semibold"
-                                onclick="openModalVideo('https://www.youtube.com/embed/ZBQHfuvKNfk')">
-                            Ver Demo
-                        </button>
-                    </div>
-                </div>
-
-                <div class="p-4">
-                    <h4 class="text-lg font-semibold">Sin Sentido</h4>
-                    <p class="text-gray-600 text-sm">Proyecto experimental reconocido por la integración creativa de escenas con objetos 3D (ExpoLMAD 2023).</p>
-                </div>
-            </div>
-
-            <!-- TARJETA 3 -->
-            <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden relative">
-                <div class="relative">
-                    <img src="Triplemania (1).jpg" class="w-full h-40 object-cover" />
-
-                    <div class="project-overlay absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black/50">
-                        <button class="bg-white text-blue-600 px-4 py-2 rounded-full font-semibold"
-                                onclick="openModalFb('https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1134930487820175%2F&show_text=false&width=267&t=0')">
-                            Ver Demo
-                        </button>
-                    </div>
-                </div>
-
-                <div class="p-4">
-                    <h4 class="text-lg font-semibold">Triplemanía AAA</h4>
-                    <p class="text-gray-600 text-sm">Captura de videos y fotografías durante el evento, proporcionando contenido de alta calidad para promocionales.</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-</div>
-<!-- MODAL PARA VIDEO -->
-<div id="videoModal" class="fixed inset-0 bg-black/70 flex items-center justify-center hidden px-4">
-    <div class="bg-black rounded-lg p-2 relative max-w-3xl w-full">
-
-        <button class="absolute top-2 right-3 text-white text-3xl"
-                onclick="closeModalVideo()">×</button>
-
-        <iframe id="videoFrame" class="w-full h-80 rounded-lg" src="" allowfullscreen></iframe>
-    </div>
-</div>
-<!-- Modal FB -->
-<div id="videoModalFb" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
-    <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-        <div class="relative">
-            <button id="closeModalFb" class="absolute top-2 right-2 text-gray-600 hover:text-gray-900">
-                <i class="fas fa-times text-2xl"></i>
-            </button>
-            <iframe id="videoFrameFb" width="360" height="450" src="" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </div>
-</div>
-     <!-- Modal Página Web -->
-<div id="videoModalPagWeb" 
-class="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center hidden z-50">
-
-<div class="relative w-[90vw] h-[90vh]">
-   
-   <!-- Botón cerrar -->
-   <button id="closeModalPagWeb" 
-           class="absolute top-2 right-3 text-4xl text-white hover:text-gray-300 z-50">
-       &times;
-   </button>
-
-   <!-- Iframe sin fondo blanco -->
-   <iframe id="videoFramePagWeb"
-           class="w-full h-full rounded-lg border-0 shadow-xl"
-           style="background: transparent;"
-           frameborder="0">
-   </iframe>
-</div>
-</div>
-
- <!-- Modal con tarjetas internas -->
-<div id="subProjectsModal"
-class="modal fixed inset-0 hidden bg-black/70 flex items-center justify-center p-6 z-50">
-
-<div class="modal-content bg-white p-6 rounded-xl max-w-5xl w-full overflow-y-auto max-h-[90vh] relative">
-
-   <!-- Botón cerrar -->
-   <span class="close absolute top-3 right-5 text-3xl cursor-pointer">&times;</span>
-
-   <!-- Contenedor de tarjetas internas -->
-   <div class="grid md:grid-cols-2 gap-6">
-       
-       <!-- Tarjeta interna 1 -->
-       <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden relative">
-           <div class="relative">
-               <img src="kefeito.jpg" class="w-full h-48 object-cover"/>
-               <div class="project-overlay absolute inset-0 flex items-center justify-center">
-                   <button class="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition duration-300"
-                           onclick="openModal('https://www.youtube.com/embed/yntPGZ6W-z4')">
-                       <i class="fas fa-eye mr-2"></i>Ver Demo
-                   </button>
-               </div>
-           </div>
-           <div class="p-6">
-               <h4 class="text-xl font-semibold mb-3">Cortometraje "Kefeito vs Covicho"</h4>
-               <p class="text-gray-600 mb-4">
-                   Proyecto académico de VFX seleccionado para ExpoLMAD 2022.
-               </p>
-           </div>
-       </div>
-
-       <!-- Tarjeta interna 2 -->
-       <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden relative">
-           <div class="relative">
-               <img src="sin sentido.jpg" class="w-full h-48 object-cover"/>
-               <div class="project-overlay absolute inset-0 flex items-center justify-center">
-                   <button class="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition duration-300"
-                           onclick="openModal('https://www.youtube.com/embed/ZBQHfuvKNfk')">
-                       <i class="fas fa-eye mr-2"></i>Ver Demo
-                   </button>
-               </div>
-           </div>
-           <div class="p-6">
-               <h4 class="text-xl font-semibold mb-3">"Sin Sentido"</h4>
-               <p class="text-gray-600 mb-4">
-                   Proyecto experimental con integración 3D y composición creativa.
-               </p>
-           </div>
-       </div>
-
-   </div>
-</div>
-</div>
-
-        <!-- MODAL -->
-        <div id="cardsModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <div class="grid md:grid-cols-2 gap-6" id="modalCardsContainer"></div>
-            </div>
-        </div>
-        
-        <!-- MODAL FOTOGRAFÍA -->
-        <div id="photoModal" class="modal">
-            <div class="modal-content">
-        
-                <span class="close" onclick="closePhotoModal()">&times;</span>
-        
-                <!-- CARRUSEL -->
-                <div class="relative w-full max-w-2xl mx-auto mb-6">
-        
-                    <img id="carouselImage"  
-                         src="Fotos/Bestia.jpg"  
-                         class="w-full h-80 object-cover rounded-lg cursor-pointer"
-                         onclick="openImageZoom(photoIndex)"
-                         >
-        
-                    <!-- Flechas -->
-                    <button onclick="prevImage()" class="absolute left-2 top-1/2 -translate-y-1/2 
-                        bg-white px-3 py-2 rounded-full shadow-lg">&#10094;</button>
-        
-                    <button onclick="nextImage()" class="absolute right-2 top-1/2 -translate-y-1/2 
-                        bg-white px-3 py-2 rounded-full shadow-lg">&#10095;</button>
-                </div>
-        
-                <!-- INFO -->
-                <div class="px-2">
-                    <h3 class="text-xl font-semibold mb-2">Fotografía Profesional</h3>
-                    <p class="text-gray-700">
-                        Colección de capturas realizadas en diferentes eventos, sesiones dirigidas y 
-                        cobertura profesional. Cada foto representa técnicas avanzadas en iluminación,
-                        composición y edición.
-                    </p>
-                </div>
-        
-            </div>
-        </div>
-        
-        <!-- MODAL ZOOM CON CARRUSEL -->
-        <div id="zoomModal" class="modal">
-            <div class="modal-content max-w-4xl">
-        
-                <span class="close" onclick="closeZoomModal()">&times;</span>
-        
-                <div class="relative w-full">
-        
-                    <!-- Imagen grande -->
-                    <img id="zoomCarouselImage"
-                         class="w-full h-[70vh] object-contain rounded-lg">
-        
-                    <!-- Flechas -->
-                    <button onclick="prevZoomImage()" class="absolute left-2 top-1/2 -translate-y-1/2 
-                        bg-white px-4 py-2 rounded-full shadow-lg">&#10094;</button>
-        
-                    <button onclick="nextZoomImage()" class="absolute right-2 top-1/2 -translate-y-1/2 
-                        bg-white px-4 py-2 rounded-full shadow-lg">&#10095;</button>
-                </div>
-        
-                <!-- Dots -->
-                <div class="flex justify-center mt-4 space-x-2" id="zoomDots"></div>
-        
-            </div>
-        </div>
-    </section>
-    
-    <!-- Projects Section -->
-    <section id="proyectos" class="py-20 bg-gray-50" style="margin-top: -20%;">
-        <div class="container mx-auto px-6">
-         
-
-                <!-- Education Section -->
-                <br>
-                <br>
-                <br>
-                <div class="bg-white p-8 rounded-xl shadow-lg">
-                    <h3 class="text-4xl font-bold text-center mb-8 text-gray-800">Educación</h3>
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div class="bg-gray-800 p-6 rounded-lg">
-                            <div class="flex items-center mb-4">
-                                <i class="fas fa-graduation-cap text-gray-50 text-2xl mr-4"></i>
-                                <h4 class="text-xl font-semibold text-gray-50">Licenciatura en Multimedia y Animación Digital</h4>
-                            </div>
-                            <p class="text-gray-50 pl-10">Facultad de Ciencias Físico Matemáticas, UANL</p>
-                        </div>
-                        <div class="bg-gray-800 p-6 rounded-lg">
-                            <div class="flex items-center mb-4">
-                                <i class="fas fa-graduation-cap text-gray-50 text-2xl mr-4"></i>
-                                <h4 class="text-xl font-semibold text-gray-100">Técnico en Diseño Gráfico</h4>
-                            </div>
-                            <p class="text-gray-100 pl-10">Escuela Industrial y Preparatoria Técnica Pablo Livas, UANL</p>
-                        </div>
-                    </div>
-                </div>
-        </div>
-    </section>
-    
     <!-- Skills Section -->
     <section id="habilidades" class="py-20 bg-gray-50"style="margin-top: -5%;">
         <div class="container mx-auto px-6">
@@ -655,6 +278,303 @@ class="modal fixed inset-0 hidden bg-black/70 flex items-center justify-center p
                         </div>
                 </div>
             </div>
+        </div>
+    </section>
+    <section id="proyectos" class="py-20 bg-gray-100 text-gray-800">
+        <div class="container mx-auto px-4 py-16">
+            <h3 class="text-2xl font-semibold mb-8 text-gray-800">Logros Destacados</h3>
+        
+            <div class="grid md:grid-cols-3 gap-8">
+        
+                <!-- TARJETA 1 -->
+                <div class="project-card relative bg-white rounded-xl shadow-lg cursor-pointer overflow-hidden"
+                    data-projects='[
+                        {"img":"kefeito.jpg","title":"Cortometraje Kefeito vs Covicho","desc":"Proyecto académico de VFX, seleccionado en ExpoLMAD 2022","video":"https://www.youtube.com/embed/yntPGZ6W-z4"},
+                        {"img":"kefeito.jpg","title":"Proyecto VFX 2","desc":"Segunda parte del proyecto","video":"https://www.youtube.com/embed/ZBQHfuvKNfk"},
+                        {"img":"kefeito.jpg","title":"Proyecto VFX 3","desc":"Tercera parte del proyecto","video":"https://www.youtube.com/embed/ZBQHfuvKNfk"}
+                    ]'
+                >
+        
+                    <!-- Imagen + Overlay -->
+                    <div class="relative">
+                        <img src="kefeito.jpg" class="w-full h-48 object-cover"/>
+        
+                        <!-- Overlay con botón -->
+                        <div class="project-overlay absolute inset-0 flex items-center justify-center">
+                            <button 
+                                class="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition duration-300"
+                                onclick="event.stopPropagation(); openModalFromButton(this)">
+                                <i class="fas fa-eye mr-2"></i>Ver Proyectos
+                            </button>
+                        </div>
+                    </div>
+        
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-3 text-gray-800">Cortometraje "Kefeito vs Covicho"</h4>
+                        <p class="text-gray-600 mb-4">Proyecto académico de Efectos Visuales I.</p>
+                    </div>
+                </div>
+        
+                <!-- TARJETA 2 -->
+                <div class="project-card relative bg-white rounded-xl shadow-lg cursor-pointer overflow-hidden"
+                    data-projects='[
+                        {"img":"sin sentido.jpg","title":"Cortometraje Sin Sentido","desc":"Proyecto experimental con integración de 3D","video":"https://www.youtube.com/embed/ZBQHfuvKNfk"},
+                        {"img":"sin sentido.jpg","title":"Proyecto Experimental 2","desc":"Segunda parte experimental","video":"https://www.youtube.com/embed/example2"}
+                    ]'
+                >
+                 <!-- Imagen + Overlay -->
+                 <div class="relative">
+                    <img src="sin sentido.jpg" class="w-full h-48 object-cover"/>
+        
+                     <!-- Overlay con botón -->
+                     <div class="project-overlay absolute inset-0 flex items-center justify-center">
+                        <button 
+                            class="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition duration-300"
+                            onclick="event.stopPropagation(); openModalFromButton(this)">
+                            <i class="fas fa-eye mr-2"></i>Ver Proyectos
+                        </button>
+                     </div>
+                    </div>
+        
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-3 text-gray-800">Fotografías</h4>
+                        <p class="text-gray-600 mb-4">Integración creativa de escenas con objetos 3D.</p>
+                    </div>
+                </div>
+        
+                <!-- TARJETA 3 -->
+                <div class="project-card relative bg-white rounded-xl shadow-lg cursor-pointer overflow-hidden"
+                    data-projects='[
+                        {"img":"Triplemania (1).jpg","title":"Lucha Libre AAA - Triplemania","desc":"Cobertura profesional de video y fotografía","video":"https://www.youtube.com/embed/example3"}
+                    ]'
+                >
+                 <!-- Imagen + Overlay -->
+                 <div class="relative">
+                    <img src="Triplemania (1).jpg" class="w-full h-48 object-cover"/>
+        
+                    <!-- Overlay con botón -->
+                    <div class="project-overlay absolute inset-0 flex items-center justify-center">
+                        <button 
+                            class="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition duration-300"
+                            onclick="event.stopPropagation(); openModalFromButton(this)">
+                            <i class="fas fa-eye mr-2"></i>Ver Proyectos
+                        </button>
+                    </div>
+                </div>
+        
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-3 text-gray-800">Renders</h4>
+                        <p class="text-gray-600 mb-4">Captura de videos y fotografías de alta calidad.</p>
+                    </div>
+                </div>
+                
+                
+                <!-- TARJETA DE FOTOGRAFÍA -->
+                    <div class="project-card relative bg-white rounded-xl shadow-lg cursor-pointer overflow-hidden"
+                    onclick="openPhotoModal()">
+                    <div class="relative">    
+                        <img src="Fotos/Celso.jpg" class="w-full h-48 object-cover"/>
+                      
+                         <!-- Overlay con botón -->
+                    <div class="project-overlay absolute inset-0 flex items-center justify-center">
+                        <button 
+                            class="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition duration-300"
+                            onclick="event.stopPropagation(); openPhotoModal()"
+                            >
+                            <i class="fas fa-eye mr-2"></i>Ver Proyectos
+                        </button>
+                    </div>
+                </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold mb-3 text-gray-800">Fotografía Profesional</h4>
+                            <p class="text-gray-600 mb-4">Sesiones, cobertura de eventos y fotografía comercial.</p>
+                        </div>
+                    </div>
+        
+                <!-- TARJETA 4 -->
+                <div class="project-card relative bg-white rounded-xl shadow-lg cursor-pointer overflow-hidden"
+                    data-projects='[
+                        {"img":"Triplemania.jpg","title":"Lucha Libre AAA - Triplemania","desc":"Cobertura profesional de video y fotografía","video":"https://www.youtube.com/embed/example3"}
+                    ]'
+                >
+                 <!-- Imagen + Overlay -->
+                 <div class="relative">
+                    <img src="Triplemania (2).jpg" class="w-full h-48 object-cover"/>
+        
+                    <!-- Overlay con botón -->
+                    <div class="project-overlay absolute inset-0 flex items-center justify-center">
+                        <button 
+                            class="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition duration-300"
+                            onclick="event.stopPropagation(); openModalFromButton(this)">
+                            <i class="fas fa-eye mr-2"></i>Ver Proyectos
+                        </button>
+                    </div>
+                </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-3 text-gray-800">Páginas Web</h4>
+                        <p class="text-gray-600 mb-4">Captura de videos y fotografías de alta calidad.</p>
+                    </div>
+                </div>
+
+
+
+
+            
+                    <!-- PagWeb -->
+                    <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden card-hover relative">
+                        <div class="relative">
+                            <img src="pagwebCuteMedia.jpg" alt="Pagina web" 
+                                 class="w-full h-48 object-cover"/>
+                            <div class="project-overlayPagWeb absolute inset-0 flex items-center justify-center">
+                                <div class="text-center text-white">
+                                    <button class="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition duration-300 mr-3" onclick="openModalPagWeb('https://josuepuente.github.io/Prueba-de-seleccion-CuteDigitalMedia/')">
+                                        <i class="fas fa-eye mr-2"></i>Ver Página Responsiva
+                                    </button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-semibold mb-3 text-gray-800">Diseño de página web para agencia digital (proyecto de práctica)</h4>
+                                <p class="text-gray-600 mb-4">Landing Page para una red de influencers, enfocada en diseño moderno, jerarquía visual clara y llamados a la acción efectivos.</p>
+                                <p class="text-gray-600">Ir a Página:</p>
+                                <p class="text-blue-600 mb-4" ><a href="https://josuepuente.github.io/Prueba-de-seleccion-CuteDigitalMedia/">https://josuepuente.github.io/Prueba-de-seleccion-CuteDigitalMedia/</a></p>
+                                
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">VisualStudio Code</span>
+          
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+
+     
+
+        </div>
+     <!-- Modal Página Web -->
+<div id="videoModalPagWeb" 
+class="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center hidden z-50">
+
+<div class="relative w-[90vw] h-[90vh]">
+   
+   <!-- Botón cerrar -->
+   <button id="closeModalPagWeb" 
+           class="absolute top-2 right-3 text-4xl text-white hover:text-gray-300 z-50">
+       &times;
+   </button>
+
+   <!-- Iframe sin fondo blanco -->
+   <iframe id="videoFramePagWeb"
+           class="w-full h-full rounded-lg border-0 shadow-xl"
+           style="background: transparent;"
+           frameborder="0">
+   </iframe>
+</div>
+</div>
+
+ 
+        <!-- MODAL -->
+        <div id="cardsModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="grid md:grid-cols-2 gap-6" id="modalCardsContainer"></div>
+            </div>
+        </div>
+        
+        <!-- MODAL FOTOGRAFÍA -->
+        <div id="photoModal" class="modal">
+            <div class="modal-content">
+        
+                <span class="close" onclick="closePhotoModal()">&times;</span>
+        
+                <!-- CARRUSEL -->
+                <div class="relative w-full max-w-2xl mx-auto mb-6">
+        
+                    <img id="carouselImage"  
+                         src="Fotos/Bestia.jpg"  
+                         class="w-full h-80 object-cover rounded-lg cursor-pointer"
+                         onclick="openImageZoom(photoIndex)"
+                         >
+        
+                    <!-- Flechas -->
+                    <button onclick="prevImage()" class="absolute left-2 top-1/2 -translate-y-1/2 
+                        bg-white px-3 py-2 rounded-full shadow-lg">&#10094;</button>
+        
+                    <button onclick="nextImage()" class="absolute right-2 top-1/2 -translate-y-1/2 
+                        bg-white px-3 py-2 rounded-full shadow-lg">&#10095;</button>
+                </div>
+        
+                <!-- INFO -->
+                <div class="px-2">
+                    <h3 class="text-xl font-semibold mb-2">Fotografía Profesional</h3>
+                    <p class="text-gray-700">
+                        Colección de capturas realizadas en diferentes eventos, sesiones dirigidas y 
+                        cobertura profesional. Cada foto representa técnicas avanzadas en iluminación,
+                        composición y edición.
+                    </p>
+                </div>
+        
+            </div>
+        </div>
+        
+        <!-- MODAL ZOOM CON CARRUSEL -->
+        <div id="zoomModal" class="modal">
+            <div class="modal-content max-w-4xl">
+        
+                <span class="close" onclick="closeZoomModal()">&times;</span>
+        
+                <div class="relative w-full">
+        
+                    <!-- Imagen grande -->
+                    <img id="zoomCarouselImage"
+                         class="w-full h-[70vh] object-contain rounded-lg">
+        
+                    <!-- Flechas -->
+                    <button onclick="prevZoomImage()" class="absolute left-2 top-1/2 -translate-y-1/2 
+                        bg-white px-4 py-2 rounded-full shadow-lg">&#10094;</button>
+        
+                    <button onclick="nextZoomImage()" class="absolute right-2 top-1/2 -translate-y-1/2 
+                        bg-white px-4 py-2 rounded-full shadow-lg">&#10095;</button>
+                </div>
+        
+                <!-- Dots -->
+                <div class="flex justify-center mt-4 space-x-2" id="zoomDots"></div>
+        
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="proyectos" class="py-20 bg-gray-50" style="margin-top: -5%;">
+        <div class="container mx-auto px-6">
+         
+
+                <!-- Education Section -->
+                <br>
+                <br>
+                <br>
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-4xl font-bold text-center mb-8 text-gray-800">Educación</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-gray-800 p-6 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-graduation-cap text-gray-50 text-2xl mr-4"></i>
+                                <h4 class="text-xl font-semibold text-gray-50">Licenciatura en Multimedia y Animación Digital</h4>
+                            </div>
+                            <p class="text-gray-50 pl-10">Facultad de Ciencias Físico Matemáticas, UANL</p>
+                        </div>
+                        <div class="bg-gray-800 p-6 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-graduation-cap text-gray-50 text-2xl mr-4"></i>
+                                <h4 class="text-xl font-semibold text-gray-100">Técnico en Diseño Gráfico</h4>
+                            </div>
+                            <p class="text-gray-100 pl-10">Escuela Industrial y Preparatoria Técnica Pablo Livas, UANL</p>
+                        </div>
+                    </div>
+                </div>
         </div>
     </section>
 <!-- Contact Section -->
