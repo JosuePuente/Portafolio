@@ -4,7 +4,11 @@
 const modal = document.getElementById('cardsModal');
 const closeBtn = modal.querySelector('.close');
 const container = document.getElementById('modalCardsContainer');
-let photoIndex = 0;
+
+let photoIndex = 0;// índice global para AMBOS modales
+/* ============================
+      LISTA DE IMÁGENES
+============================ */
 const photoList = [
     "Fotos/ZTimon.jpg",
     "Fotos/Moha.jpg",
@@ -18,6 +22,8 @@ const photoList = [
     "Fotos/CelsoP.jpg"
 
 ];
+let modalOpen = false;
+let zoomOpen = false;
 
 function showPhoto() {
     document.getElementById("carouselImage").src = photoList[photoIndex];
@@ -317,3 +323,93 @@ function closeModalVideo() {
     document.getElementById("videoFrame").src = "";
     document.getElementById("videoModal").classList.add("hidden");
 }
+
+
+/* ============================
+      ABRIR / CERRAR MODAL PRINCIPAL FOTOS
+============================ */
+function openPhotoModal(index = 0) {
+    photoIndex = index;
+    updateMainCarousel();
+    document.getElementById("photoModal").style.display = "flex";
+    modalOpen = true;
+}
+
+function closePhotoModal() {
+    document.getElementById("photoModal").style.display = "none";
+    modalOpen = false;
+}
+
+/* ============================
+      CARRUSEL PRINCIPAL
+============================ */
+function updateMainCarousel() {
+    document.getElementById("carouselImage").src = photoList[photoIndex];
+}
+
+function nextImage() {
+    photoIndex = (photoIndex + 1) % photoList.length;
+    updateMainCarousel();
+}
+
+function prevImage() {
+    photoIndex = (photoIndex - 1 + photoList.length) % photoList.length;
+    updateMainCarousel();
+}
+
+/* ============================
+      ABRIR / CERRAR ZOOM
+============================ */
+function openImageZoom(index) {
+    photoIndex = index; // sincroniza
+    updateZoomImage();
+    document.getElementById("zoomModal").style.display = "flex";
+    zoomOpen = true;
+}
+
+function closeZoomModal() {
+    document.getElementById("zoomModal").style.display = "none";
+    updateMainCarousel(); // mantiene la última imagen al regresar
+    zoomOpen = false;
+}
+
+/* ============================
+      CARRUSEL ZOOM
+============================ */
+function updateZoomImage() {
+    document.getElementById("zoomCarouselImage").src = photoList[photoIndex];
+}
+
+function nextZoomImage() {
+    photoIndex = (photoIndex + 1) % photoList.length;
+    updateZoomImage();
+}
+
+function prevZoomImage() {
+    photoIndex = (photoIndex - 1 + photoList.length) % photoList.length;
+    updateZoomImage();
+}
+
+/* ============================
+      FLECHAS DEL TECLADO
+============================ */
+document.addEventListener("keydown", function(e) {
+    
+    // Mover solo si un modal está abierto
+    if (!modalOpen && !zoomOpen) return;
+
+    if (e.key === "ArrowRight") {
+        if (zoomOpen) nextZoomImage();
+        else nextImage();
+    }
+
+    if (e.key === "ArrowLeft") {
+        if (zoomOpen) prevZoomImage();
+        else prevImage();
+    }
+
+    if (e.key === "Escape") {
+        if (zoomOpen) closeZoomModal();
+        else closePhotoModal();
+    }
+});

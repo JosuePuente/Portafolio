@@ -102,6 +102,63 @@
    
 }
 
+/* Botón de cierre del modal zoom */
+#zoomModal .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    z-index: 9999;  /* se asegura estar arriba de TODO */
+    cursor: pointer;
+    padding: 8px;
+    color: white;
+    border-radius: 50%;
+    font-size: 24px;
+}
+
+#zoomModal .close:hover
+{
+    color:#d2dada
+}
+
+#zoomModal .modal-content {
+    position: relative;
+    overflow: visible !important;  /* evita que tape la X */
+}
+
+/* SOLO afecta al modal #modalTresProyectos */
+@media (max-width: 768px) {
+
+    #modalTresProyectos {
+        padding-top: 100px;   /* pequeño margen arriba para que nunca se pegue */
+        padding-bottom: 40px;
+    }
+    /* Reduce el tamaño del modal en móvil */
+    #modalTresProyectos > div {
+        max-height: 85vh !important;
+        width: 100%;
+        margin: 0 16px;   /* margen lateral para que no se pegue a los bordes */
+        padding: 16px;
+    }
+
+    /* Tarjetas más compactas */
+    #modalTresProyectos .project-card img {
+        height: 120px !important;
+        object-fit: cover;
+    }
+
+    /* Cambiar layout a 1 sola columna en móvil */
+    #modalTresProyectos .grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    /* La “X” siempre visible */
+    #modalTresProyectos button[onclick="closeModalTresProyectos()"] {
+        top: 10px !important;
+        right: 10px !important;
+        font-size: 26px !important;
+    }
+}
 /* Modal oculto por defecto */
 .modal {
     display: none;
