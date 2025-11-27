@@ -477,42 +477,53 @@ class="modal fixed inset-0 hidden bg-black/70 flex items-center justify-center p
                 <div class="grid md:grid-cols-2 gap-6" id="modalCardsContainer"></div>
             </div>
         </div>
-        
-        <!-- MODAL FOTOGRAFÍA -->
-        <div id="photoModal" class="modal">
-            <div class="modal-content">
-        
-                <span class="close" onclick="closePhotoModal()">&times;</span>
-        
-                <!-- CARRUSEL -->
-                <div class="relative w-full max-w-2xl mx-auto mb-6">
-        
-                    <img id="carouselImage"  
-                         src="Fotos/Bestia.jpg"  
-                         class="w-full h-80 object-cover rounded-lg cursor-pointer"
-                         onclick="openImageZoom(photoIndex)"
-                         >
-        
-                    <!-- Flechas -->
-                    <button onclick="prevImage()" class="absolute left-2 top-1/2 -translate-y-1/2 
-                        bg-white px-3 py-2 rounded-full shadow-lg">&#10094;</button>
-        
-                    <button onclick="nextImage()" class="absolute right-2 top-1/2 -translate-y-1/2 
-                        bg-white px-3 py-2 rounded-full shadow-lg">&#10095;</button>
-                </div>
-        
-                <!-- INFO -->
-                <div class="px-2">
-                    <h3 class="text-xl font-semibold mb-2">Fotografía Profesional</h3>
-                    <p class="text-gray-700">
-                        Colección de capturas realizadas en diferentes eventos, sesiones dirigidas y 
-                        cobertura profesional. Cada foto representa técnicas avanzadas en iluminación,
-                        composición y edición.
-                    </p>
-                </div>
-        
-            </div>
+       <!-- MODAL FOTOGRAFÍA -->
+<div id="photoModal" class="modal">
+    <div class="modal-content">
+
+        <span class="close" onclick="closePhotoModal()">&times;</span>
+
+        <!-- CARRUSEL -->
+        <div class="relative w-full max-w-2xl mx-auto mb-6">
+
+            <img id="carouselImage"  
+                 src="Fotos/Bestia.jpg"  
+                 class="w-full h-80 object-cover rounded-lg cursor-pointer"
+                 onclick="openImageZoom(photoIndex)"
+            >
+
+            <!-- Flecha Izquierda -->
+            <button onclick="prevImage()" 
+                class="absolute left-0 top-1/2 -translate-y-1/2
+                       bg-white/90 hover:bg-white 
+                       px-4 py-3 rounded-full shadow-lg text-2xl font-bold
+                       select-none">
+                &#10094;
+            </button>
+
+            <!-- Flecha Derecha -->
+            <button onclick="nextImage()" 
+                class="absolute right-0 top-1/2 -translate-y-1/2
+                       bg-white/90 hover:bg-white 
+                       px-4 py-3 rounded-full shadow-lg text-2xl font-bold
+                       select-none">
+                &#10095;
+            </button>
         </div>
+
+        <!-- INFO -->
+        <div class="px-2">
+            <h3 class="text-xl font-semibold mb-2">Fotografía Profesional</h3>
+            <p class="text-gray-700">
+                Colección de capturas realizadas en diferentes eventos, sesiones dirigidas y 
+                cobertura profesional. Cada foto representa técnicas avanzadas en iluminación,
+                composición y edición.
+            </p>
+        </div>
+
+    </div>
+</div>
+
         
         <!-- MODAL ZOOM CON CARRUSEL -->
         <div id="zoomModal" class="modal">
@@ -526,13 +537,24 @@ class="modal fixed inset-0 hidden bg-black/70 flex items-center justify-center p
                     <img id="zoomCarouselImage"
                          class="w-full h-[70vh] object-contain rounded-lg">
         
-                    <!-- Flechas -->
-                    <button onclick="prevZoomImage()" class="absolute left-2 top-1/2 -translate-y-1/2 
-                        bg-white px-4 py-2 rounded-full shadow-lg">&#10094;</button>
-        
-                    <button onclick="nextZoomImage()" class="absolute right-2 top-1/2 -translate-y-1/2 
-                        bg-white px-4 py-2 rounded-full shadow-lg">&#10095;</button>
-                </div>
+                   <!-- Flecha Izquierda -->
+                    <button onclick="prevZoomImage()" 
+                        class="absolute left-0 top-1/2 -translate-y-1/2
+                            bg-white/90 hover:bg-white 
+                            px-4 py-3 rounded-full shadow-lg text-2xl font-bold
+                            select-none z-50">
+                        &#10094;
+                    </button>
+
+                    <!-- Flecha Derecha -->
+                    <button onclick="nextZoomImage()" 
+                        class="absolute right-0 top-1/2 -translate-y-1/2
+                            bg-white/90 hover:bg-white 
+                            px-4 py-3 rounded-full shadow-lg text-2xl font-bold
+                            select-none z-50">
+                        &#10095;
+                    </button>
+
         
                 <!-- Dots -->
                 <div class="flex justify-center mt-4 space-x-2" id="zoomDots"></div>
