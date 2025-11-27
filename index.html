@@ -367,51 +367,92 @@
             </div>
 
         </div>
+<!-- VERSION MÓVIL (CARRUSEL CON OVERLAY) -->
+<div class="block md:hidden mt-2">
+    <div class="swiper">
+        <div class="swiper-wrapper">
 
-        <!-- VERSION MÓVIL (CARRUSEL) -->
-        <div class="block md:hidden mt-2">
-            <div class="swiper">
-                <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden relative">
 
-                    <!-- Slide 1 -->
-                    <div class="swiper-slide">
-                        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                            <img src="kefeito.jpg" class="w-full h-40 object-cover">
-                            <div class="p-4">
-                                <h4 class="font-semibold">Kefeito vs Covicho</h4>
-                                <p class="text-gray-600 text-sm">Proyecto destacado ExpoLMAD.</p>
-                            </div>
+                    <div class="relative">
+                        <img src="kefeito.jpg" class="w-full h-40 object-cover">
+
+                        <!-- Overlay -->
+                        <div class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 
+                                    transition flex items-center justify-center">
+                            <button class="bg-white text-blue-600 px-4 py-2 rounded-full font-semibold"
+                                    onclick="openModalVideo('https://www.youtube.com/embed/yntPGZ6W-z4')">
+                                Ver Demo
+                            </button>
                         </div>
                     </div>
 
-                    <!-- Slide 2 -->
-                    <div class="swiper-slide">
-                        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                            <img src="sin sentido.jpg" class="w-full h-40 object-cover">
-                            <div class="p-4">
-                                <h4 class="font-semibold">Sin Sentido</h4>
-                                <p class="text-gray-600 text-sm">Proyecto audiovisual seleccionado.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 3 -->
-                    <div class="swiper-slide">
-                        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                            <img src="triplemania.jpg" class="w-full h-40 object-cover">
-                            <div class="p-4">
-                                <h4 class="font-semibold">Triplemanía XXX</h4>
-                                <p class="text-gray-600 text-sm">Colaboración con AAA.</p>
-                            </div>
-                        </div>
+                    <div class="p-4">
+                        <h4 class="font-semibold">Kefeito vs Covicho</h4>
+                        <p class="text-gray-600 text-sm">Proyecto destacado ExpoLMAD.</p>
                     </div>
 
                 </div>
-
-                <!-- Paginación -->
-                <div class="swiper-pagination"></div>
             </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden relative">
+
+                    <div class="relative">
+                        <img src="sin sentido.jpg" class="w-full h-40 object-cover">
+
+                        <!-- Overlay -->
+                        <div class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 
+                                    transition flex items-center justify-center">
+                            <button class="bg-white text-blue-600 px-4 py-2 rounded-full font-semibold"
+                                    onclick="openModalVideo('https://www.youtube.com/embed/ZBQHfuvKNfk')">
+                                Ver Demo
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="p-4">
+                        <h4 class="font-semibold">Sin Sentido</h4>
+                        <p class="text-gray-600 text-sm">Proyecto audiovisual seleccionado.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden relative">
+
+                    <div class="relative">
+                        <img src="Triplemania (1).jpg" class="w-full h-40 object-cover">
+
+                        <!-- Overlay -->
+                        <div class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100
+                                    transition flex items-center justify-center">
+                            <button class="bg-white text-blue-600 px-4 py-2 rounded-full font-semibold"
+                                    onclick="openModalFb('https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1134930487820175%2F&show_text=false&width=267&t=0')">
+                                Ver Demo
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="p-4">
+                        <h4 class="font-semibold">Triplemanía XXX</h4>
+                        <p class="text-gray-600 text-sm">Colaboración con AAA.</p>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
+
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+
 
     </div>
 </div>
