@@ -110,6 +110,7 @@
     z-index: 9999;  /* se asegura estar arriba de TODO */
     cursor: pointer;
     padding: 8px;
+    background: #585858;
     color: white;
     border-radius: 50%;
     font-size: 24px;

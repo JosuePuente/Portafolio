@@ -8,7 +8,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="estilos.css">
-  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
 </head>
 <body class="bg-gray-900 text-white">
     <!-- Navigation -->
@@ -245,7 +247,7 @@
                             class="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition duration-300"
                             onclick="event.stopPropagation(); openPhotoModal()"
                             >
-                            <i class="fas fa-eye mr-2"></i>Ver Proyectos
+                            <i class="fas fa-camera"></i> Ver Fotografías
                         </button>
                     </div>
                 </div>
@@ -299,25 +301,24 @@
 
         </div>
 
-        <!-- MODAL -->
+      <!-- MODAL -->
 <div id="modalTresProyectos" class="fixed inset-0 bg-black/60 flex items-center justify-center px-4 hidden">
-    
+
     <div class="bg-white rounded-lg shadow-xl max-w-4xl w-full p-6 relative overflow-y-auto max-h-[90vh]">
 
         <!-- Cerrar -->
         <button class="absolute top-3 right-3 text-gray-600 text-2xl"
                 onclick="closeModalTresProyectos()">×</button>
 
-        <h2 class="text-2xl font-bold mb-5 text-gray-800">Mis Proyectos</h2>
+        <h2 class="text-2xl font-bold mb-5 text-gray-800">Logros Destacados</h2>
 
-        <!-- Contenedor de las 3 tarjetas -->
-        <div class="grid md:grid-cols-3 gap-6">
+        <!-- VERSION DESKTOP (GRID 3 COLUMNAS) -->
+        <div class="hidden md:grid grid-cols-3 gap-6">
 
             <!-- TARJETA 1 -->
             <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden relative">
                 <div class="relative">
                     <img src="kefeito.jpg" class="w-full h-40 object-cover" />
-
                     <div class="project-overlay absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black/50">
                         <button class="bg-white text-blue-600 px-4 py-2 rounded-full font-semibold"
                                 onclick="openModalVideo('https://www.youtube.com/embed/yntPGZ6W-z4')">
@@ -325,7 +326,6 @@
                         </button>
                     </div>
                 </div>
-
                 <div class="p-4">
                     <h4 class="text-lg font-semibold">Kefeito vs Covicho</h4>
                     <p class="text-gray-600 text-sm">Proyecto académico de Efectos Visuales I, seleccionado entre los mejores trabajos de ExpoLMAD 2022.</p>
@@ -336,7 +336,6 @@
             <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden relative">
                 <div class="relative">
                     <img src="sin sentido.jpg" class="w-full h-40 object-cover" />
-
                     <div class="project-overlay absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black/50">
                         <button class="bg-white text-blue-600 px-4 py-2 rounded-full font-semibold"
                                 onclick="openModalVideo('https://www.youtube.com/embed/ZBQHfuvKNfk')">
@@ -344,10 +343,9 @@
                         </button>
                     </div>
                 </div>
-
                 <div class="p-4">
                     <h4 class="text-lg font-semibold">Sin Sentido</h4>
-                    <p class="text-gray-600 text-sm">Proyecto experimental reconocido por la integración creativa de escenas con objetos 3D (ExpoLMAD 2023).</p>
+                    <p class="text-gray-600 text-sm">Proyecto experimental reconocido por integración creativa en ExpoLMAD 2023.</p>
                 </div>
             </div>
 
@@ -355,25 +353,69 @@
             <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden relative">
                 <div class="relative">
                     <img src="Triplemania (1).jpg" class="w-full h-40 object-cover" />
-
                     <div class="project-overlay absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition bg-black/50">
                         <button class="bg-white text-blue-600 px-4 py-2 rounded-full font-semibold"
-                                onclick="openModalFb('https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1134930487820175%2F&show_text=false&width=267&t=0')">
+                                onclick="openModalFb('https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1134930487820175%2F')">
                             Ver Demo
                         </button>
                     </div>
                 </div>
-
                 <div class="p-4">
                     <h4 class="text-lg font-semibold">Triplemanía AAA</h4>
-                    <p class="text-gray-600 text-sm">Captura de videos y fotografías durante el evento, proporcionando contenido de alta calidad para promocionales.</p>
+                    <p class="text-gray-600 text-sm">Contenido audiovisual y fotografía capturada para promocionales del evento.</p>
                 </div>
             </div>
 
         </div>
-    </div>
 
+        <!-- VERSION MÓVIL (CARRUSEL) -->
+        <div class="block md:hidden mt-2">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                            <img src="kefeito.jpg" class="w-full h-40 object-cover">
+                            <div class="p-4">
+                                <h4 class="font-semibold">Kefeito vs Covicho</h4>
+                                <p class="text-gray-600 text-sm">Proyecto destacado ExpoLMAD.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                            <img src="sin sentido.jpg" class="w-full h-40 object-cover">
+                            <div class="p-4">
+                                <h4 class="font-semibold">Sin Sentido</h4>
+                                <p class="text-gray-600 text-sm">Proyecto audiovisual seleccionado.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                            <img src="triplemania.jpg" class="w-full h-40 object-cover">
+                            <div class="p-4">
+                                <h4 class="font-semibold">Triplemanía XXX</h4>
+                                <p class="text-gray-600 text-sm">Colaboración con AAA.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Paginación -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+
+    </div>
 </div>
+
 <!-- MODAL PARA VIDEO -->
 <div id="videoModal" class="fixed inset-0 bg-black/70 flex items-center justify-center hidden px-4">
     <div class="bg-black rounded-lg p-2 relative max-w-3xl w-full">
@@ -480,9 +522,21 @@ class="modal fixed inset-0 hidden bg-black/70 flex items-center justify-center p
        <!-- MODAL FOTOGRAFÍA -->
 <div id="photoModal" class="modal">
     <div class="modal-content">
-
-        <span class="close" onclick="closePhotoModal()">&times;</span>
-
+ <!-- Botón de cierre (X redonda) -->
+            <button onclick="closePhotoModal()"
+                class="absolute top-4 right-4 z-[9999]
+                    bg-[#585858] hover:bg-[#6b6b6b]
+                    w-10 h-10 rounded-full
+                    flex items-center justify-center cursor-pointer
+                    transition">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke-width="2" stroke="white"
+                    class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        
         <!-- CARRUSEL -->
         <div class="relative w-full max-w-2xl mx-auto mb-6">
 
@@ -497,7 +551,7 @@ class="modal fixed inset-0 hidden bg-black/70 flex items-center justify-center p
                 class="absolute left-0 top-1/2 -translate-y-1/2
                        bg-white/90 hover:bg-white 
                        px-4 py-3 rounded-full shadow-lg text-2xl font-bold
-                       select-none">
+                       select-none" style="margin-left: 1%;">
                 &#10094;
             </button>
 
@@ -506,7 +560,7 @@ class="modal fixed inset-0 hidden bg-black/70 flex items-center justify-center p
                 class="absolute right-0 top-1/2 -translate-y-1/2
                        bg-white/90 hover:bg-white 
                        px-4 py-3 rounded-full shadow-lg text-2xl font-bold
-                       select-none">
+                       select-none" style="margin-right: 1%;">
                 &#10095;
             </button>
         </div>
@@ -529,8 +583,21 @@ class="modal fixed inset-0 hidden bg-black/70 flex items-center justify-center p
         <div id="zoomModal" class="modal">
             <div class="modal-content max-w-4xl">
         
-                <span class="close" onclick="closeZoomModal()">&times;</span>
-        
+                <!-- Botón de cierre (X redonda) -->
+            <button onclick="closeZoomModal()"
+                class="absolute top-4 right-4 z-[9999]
+                    bg-[#585858] hover:bg-[#6b6b6b]
+                    w-10 h-10 rounded-full
+                    flex items-center justify-center cursor-pointer
+                    transition">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke-width="2" stroke="white"
+                    class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
                 <div class="relative w-full">
         
                     <!-- Imagen grande -->
@@ -542,7 +609,7 @@ class="modal fixed inset-0 hidden bg-black/70 flex items-center justify-center p
                         class="absolute left-0 top-1/2 -translate-y-1/2
                             bg-white/90 hover:bg-white 
                             px-4 py-3 rounded-full shadow-lg text-2xl font-bold
-                            select-none z-50">
+                            select-none z-50"style="margin-left: 1%;">
                         &#10094;
                     </button>
 
@@ -551,7 +618,7 @@ class="modal fixed inset-0 hidden bg-black/70 flex items-center justify-center p
                         class="absolute right-0 top-1/2 -translate-y-1/2
                             bg-white/90 hover:bg-white 
                             px-4 py-3 rounded-full shadow-lg text-2xl font-bold
-                            select-none z-50">
+                            select-none z-50"style="margin-right: 1%;">
                         &#10095;
                     </button>
 
