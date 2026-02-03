@@ -692,7 +692,7 @@ Especializado en producción audiovisual y diseño estratégico.</p>
                                                 {selectedProject.gallery.map((item, idx) => (
                                                     <div key={idx} className="relative w-full aspect-video min-h-[180px] shrink-0 overflow-hidden bg-slate-800 rounded-lg shadow-inner md:snap-start">
                                                         {item.endsWith('.mp4') ? (
-                                                            <video src={item} autoPlay loop muted playsInline className="w-full h-full object-cover" />
+                                                            <video src={item}  autoPlay={window.innerWidth >= 768}  controls={window.innerWidth < 768}   muted playsInline  preload="metadata"  className="w-full h-full object-cover"/>
                                                         ) : (
                                                             <img src={item} alt={`Grid item ${idx}`} className="w-full h-full object-cover" />
                                                         )}
@@ -841,7 +841,7 @@ Especializado en producción audiovisual y diseño estratégico.</p>
                                             {selectedProject.gallery.map((item, idx) => (
                                                 <div key={idx} className="relative w-full aspect-video min-h-[180px] shrink-0 overflow-hidden bg-slate-800 rounded-lg shadow-inner md:snap-start">
                                                     {item.endsWith('.mp4') ? (
-                                                        <video src={item} autoPlay loop muted playsInline className="w-full h-full object-cover" />
+                                                        <video src={item}  autoPlay={window.innerWidth >= 768}  controls={window.innerWidth < 768}   muted playsInline  preload="metadata"  className="w-full h-full object-cover" />
                                                     ) : (
                                                         <img src={item} alt={`Grid item ${idx}`} className="w-full h-full object-cover" />
                                                     )}
