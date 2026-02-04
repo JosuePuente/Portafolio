@@ -104,15 +104,6 @@
         // --- Data Definitions ---
         const featuredProjectsData = [
             { 
-                id: 1, 
-                type: "video",
-                category: "Edición de Video / VFX", 
-                title: "Cortometraje: Sin Sentido", 
-                img: "img/sinsentido.jpg", 
-                videoUrl: "https://www.youtube.com/embed/ZBQHfuvKNfk", 
-                desc: "Proyecto reconocido en ExpoLMAD 2023 por la integración de modelos 3D en entornos reales. Logrando una narrativa inmersiva mediante técnicas avanzadas de composición digital y tracking." 
-            },
-            { 
                 id: 2, 
                 type: "gallery",
                 category: "Fotografías", 
@@ -134,6 +125,20 @@
                 desc: "Colección de capturas realizadas en diferentes eventos, sesiones dirigidas y cobertura profesional. Cada foto representa técnicas avanzadas en iluminación, composición y edición." 
             },
             { 
+                id: 8, 
+                 type: "grid-gallery",
+                category: "Edición de Video / VFX", 
+                title: "Streaming Motion Package", 
+                img: "img/twitch2.jpg", 
+                gallery: [
+                    "img/twitch.mp4",
+                    "img/twitchfinal.mp4",
+                    "img/twitchtransicion.mp4"
+                ],
+                labels: ["Intro", "Cierre", "Transición"],
+                desc: "Diseño y desarrollo de un sistema de animaciones para streaming, aplicado a un entorno de Twitch. Creación de animaciones para introducción, transiciones y cierre, manteniendo coherencia visual y fluidez narrativa a lo largo del stream." 
+            },
+            { 
                 id: 7, 
                 type: "website",
                 category: "Diseño Web", 
@@ -146,6 +151,16 @@
 
         const allProjectsData = [
             { 
+               id: 1, 
+               type: "video",
+               category: "Edición de Video / VFX", 
+               title: "Cortometraje: Sin Sentido", 
+               img: "img/sinsentido.jpg", 
+               videoUrl: "https://www.youtube.com/embed/ZBQHfuvKNfk", 
+               desc: "Proyecto reconocido en ExpoLMAD 2023 por la integración de modelos 3D en entornos reales. Logrando una narrativa inmersiva mediante técnicas avanzadas de composición digital y tracking." 
+            },
+                
+            { 
                 id: 9, 
                 type: "video",
                 category: "Edición de Video / VFX", 
@@ -154,23 +169,19 @@
                 videoUrl: "img/introboda.mp4",
                 desc: "Introducción audiovisual para boda, editada con enfoque en ritmo, continuidad visual y construcción narrativa. Material base generado con herramientas de IA; edición y narrativa desarrolladas manualmente." 
             },
+            featuredProjectsData[1], 
+        
             { 
-                id: 8, 
-                type: "grid-gallery",
-                category: "Edición de Video / VFX", 
-                title: "Streaming Motion Package", 
-                img: "img/twitch2.jpg", 
-                gallery: [
-                    "img/twitch.mp4",
-                    "img/twitchfinal.mp4",
-                    "img/twitchtransicion.mp4"
-                ],
-                labels: ["Intro", "Cierre", "Transición"],
-                desc: "Diseño y desarrollo de un sistema de animaciones para streaming, aplicado a un entorno de Twitch. Creación de animaciones para introducción, transiciones y cierre, manteniendo coherencia visual y fluidez narrativa a lo largo del stream." 
+                id: 10, 
+                type: "website",
+                category: "Diseño Web", 
+                title: "Mi Primer Portafolio", 
+                img: "img/primerweb.jpg", 
+                url: "https://josuepuente.github.io/PortafolioOLD/",
+                desc: "Primera página web de mi portafolio personal, enfocada en una presentación clara y ordenada de proyectos." 
             },
             featuredProjectsData[0], 
-            featuredProjectsData[1], 
-            featuredProjectsData[2], 
+            
             { 
                 id: 4, 
                 type: "video",
@@ -179,7 +190,8 @@
                 img: "img/kefeito.jpg", 
                 videoUrl: "https://www.youtube.com/embed/yntPGZ6W-z4",
                 desc: "Cortometraje Kefeito vs Covicho, reconocido por su calidad dentro de los mejores proyectos académicos de Efectos Visuales I." 
-            }
+            } ,    
+            featuredProjectsData[2]        
         ];
 
         // --- Common Components ---
@@ -805,13 +817,43 @@ Especializado en producción audiovisual y diseño estratégico.</p>
                                         <div className="aspect-video bg-cover bg-center" style={{backgroundImage: `url("${project.img}")`}}></div>
                                         <div className="absolute inset-0 bg-slate-950/40 transition-colors group-hover:bg-slate-950/20"></div>
                                         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-90 transition-opacity group-hover:opacity-100"></div>
-                                        <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-6 text-left">
-                                            <span className="text-primary text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1 drop-shadow-sm">{project.category}</span>
-                                            <h3 className="text-white text-lg md:text-xl font-bold leading-tight drop-shadow-md">{project.title}</h3>
-                                            <div className="flex items-center gap-2 mt-2 md:mt-3 opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0">
-                                                <span className="material-symbols-outlined text-white text-3xl">{project.type === 'gallery' ? 'visibility' : 'play_circle'}</span>
-                                                <span className="text-white text-sm font-medium">Ver Proyecto</span>
-                                            </div>
+                                                                                          
+                                        <div className="absolute inset-0 p-4 md:p-6 text-left">
+
+                                        {/* BLOQUE TEXTO */}
+                                        <div
+                                            className="
+                                            absolute bottom-4 md:bottom-6 left-4 md:left-6 right-4 md:right-6
+                                            transition-all duration-300
+                                            group-hover:bottom-16
+                                            "
+                                        >
+                                            <span className="text-primary text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1 block drop-shadow-sm">
+                                            {project.category}
+                                            </span>
+
+                                            <h3 className="text-white text-lg md:text-xl font-bold leading-tight drop-shadow-md">
+                                            {project.title}
+                                            </h3>
+                                        </div>
+
+                                        {/* CTA */}
+                                        <div
+                                            className="
+                                            absolute bottom-4 md:bottom-6 left-4 md:left-6
+                                            flex items-center gap-2
+                                            opacity-0
+                                            transition-opacity duration-300
+                                            group-hover:opacity-100
+                                            "
+                                        >
+                                            <span className="material-symbols-outlined text-white text-3xl">
+                                            {project.type === 'gallery' ? 'visibility' : 'play_circle'}
+                                            </span>
+                                            <span className="text-white text-sm font-medium">
+                                            Ver proyecto
+                                            </span>
+                                        </div>
                                         </div>
                                     </div>
                                 ))}
