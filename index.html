@@ -156,17 +156,22 @@
         ];
 
         const allProjectsData = [
+           
             { 
-               id: 1, 
-               type: "video",
-               category: "Edición de Video / VFX", 
-               title: "Cortometraje: Sin Sentido", 
-               img: "img/sinsentido.jpg", 
-               videoUrl: "https://www.youtube.com/embed/ZBQHfuvKNfk", 
-               desc: "Proyecto reconocido en ExpoLMAD 2023 por la integración de modelos 3D en entornos reales. Logrando una narrativa inmersiva mediante técnicas avanzadas de composición digital y tracking." 
+                id: 11,
+                type: "design-comparison",
+                category: "Diseño Gráfico",
+                title: "Rediseño ArtFest",
+                img: "img/DiseñoGraficoArtfest.jpg", // miniatura para la card
+                originalImg: "img/DiseñoGraficoImagen Original.jpg",
+                replicas: [
+                    "img/DiseñoGraficoArtfest.jpg",
+                    "img/DiseñoGraficoCategorías.jpg",
+                    "img/DiseñoGraficoRegístrate Hoy.jpg"
+                ],
+                desc: "Propuesta de rediseño basada en la pieza original, manteniendo identidad visual pero mejorando composición, jerarquía tipográfica y contraste."
             },
-                
-            { 
+             { 
                 id: 9, 
                 type: "video",
                 category: "Edición de Video / VFX", 
@@ -175,9 +180,31 @@
                 videoUrl: "img/introboda.mp4",
                 desc: "Introducción audiovisual para boda, editada con enfoque en ritmo, continuidad visual y construcción narrativa. Material base generado con herramientas de IA; edición y narrativa desarrolladas manualmente." 
             },
-            featuredProjectsData[1], 
-        
-            { 
+             { 
+                id:12,
+                type: "design-comparison",
+                category: "Diseño Gráfico",
+                title: "Rediseño Ingeniosity",
+                img: "img/IngeniosityImagen Réplica.jpg", // miniatura para la card
+                originalImg: "img/IngeniniosityImagen Original.jpg",
+                replicas: [
+                    "img/IngeniosityImagen Réplica.jpg",
+                    
+                ],
+                desc: "Propuesta de rediseño basada en la pieza original, manteniendo identidad visual pero mejorando composición, jerarquía tipográfica y contraste."
+            },
+             { 
+               id: 1, 
+               type: "video",
+               category: "Edición de Video / VFX", 
+               title: "Cortometraje: Sin Sentido", 
+               img: "img/sinsentido.jpg", 
+               videoUrl: "https://www.youtube.com/embed/ZBQHfuvKNfk", 
+               desc: "Proyecto reconocido en ExpoLMAD 2023 por la integración de modelos 3D en entornos reales. Logrando una narrativa inmersiva mediante técnicas avanzadas de composición digital y tracking." 
+            },
+
+            featuredProjectsData[0], 
+              { 
                 id: 10, 
                 type: "website",
                 category: "Diseño Web", 
@@ -186,7 +213,6 @@
                 url: "https://josuepuente.github.io/PortafolioOLD/",
                 desc: "Primera página web de mi portafolio personal, enfocada en una presentación clara y ordenada de proyectos." 
             },
-            featuredProjectsData[0], 
             
             { 
                 id: 4, 
@@ -196,8 +222,11 @@
                 img: "img/kefeito.jpg", 
                 videoUrl: "https://www.youtube.com/embed/yntPGZ6W-z4",
                 desc: "Cortometraje Kefeito vs Covicho, reconocido por su calidad dentro de los mejores proyectos académicos de Efectos Visuales I." 
-            } ,    
-            featuredProjectsData[2]        
+            } ,
+            featuredProjectsData[1],    
+            featuredProjectsData[2]
+            
+                     
         ];
 
         // --- Common Components ---
@@ -521,10 +550,9 @@
             return (
                 <footer className="border-t border-slate-200 dark:border-[#232948] bg-white dark:bg-[#101322] px-6 md:px-20 lg:px-40 py-10">
                     <div className="mx-auto flex max-w-[1200px] flex-col md:flex-row items-center justify-between gap-6">
-                        <div className="flex items-center gap-3 text-slate-900 dark:text-white">
-                            <span className="material-symbols-outlined text-primary text-2xl">movie</span>
-                            <span className="text-sm font-bold">Josué Darío Puente Castillo</span>
-                        </div>
+<p className="text-sm text-slate-400">
+Diseñador Multimedia · Monterrey, México
+</p>
                         <div className="flex items-center gap-6">
                             <a href="https://www.linkedin.com/in/josu%C3%A9-puente/" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-primary transition-colors flex items-center justify-center" title="LinkedIn"><svg className="size-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
                             <a href="mailto:dari.puentec@gmail.com" className="text-slate-500 hover:text-primary transition-colors cursor-pointer flex items-center justify-center" title="Email"><span className="material-symbols-outlined text-[24px]">mail</span></a>
@@ -762,7 +790,121 @@ Especializado en producción audiovisual y diseño estratégico.</p>
                 </div>
             );
         };
+const DesignComparison = ({ project }) => {
 
+    const [activeIndex, setActiveIndex] = React.useState(0);
+
+    const [isDragging, setIsDragging] = React.useState(false);
+const startX = React.useRef(0);
+
+const handleMouseDown = (e) => {
+    setIsDragging(true);
+    startX.current = e.clientX;
+};
+
+const handleMouseMove = (e) => {
+    if (!isDragging) return;
+
+    const diff = e.clientX - startX.current;
+
+    if (Math.abs(diff) > 100) {
+        if (diff < 0) {
+            setActiveIndex(prev =>
+                prev === project.replicas.length - 1 ? 0 : prev + 1
+            );
+        } else {
+            setActiveIndex(prev =>
+                prev === 0 ? project.replicas.length - 1 : prev - 1
+            );
+        }
+        setIsDragging(false);
+    }
+};
+
+const handleMouseUp = () => {
+    setIsDragging(false);
+};
+    return (
+        <div className="w-full h-full flex flex-col bg-slate-950 p-6 overflow-y-auto custom-scrollbar">
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+
+                {/* ORIGINAL */}
+                <div className="flex flex-col items-center">
+                    <span className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">
+                        Original
+                    </span>
+                    <img 
+                        src={project.originalImg}
+                        className="w-full rounded-xl shadow-2xl border border-white/5 object-contain"
+                    />
+                </div>
+
+                {/* PROPUESTAS */}
+               <div className="flex flex-col items-center relative group">
+                    <span className="text-xs font-bold uppercase tracking-widest text-primary mb-3">
+                        {project.replicas.length > 1 
+    ? `Propuesta ${activeIndex + 1} de ${project.replicas.length}`
+    : "Propuesta Final"}
+                    </span>
+
+                  <img 
+    src={project.replicas[activeIndex]}
+    draggable={false}
+    onMouseDown={project.replicas.length > 1 ? handleMouseDown : undefined}
+    onMouseMove={project.replicas.length > 1 ? handleMouseMove : undefined}
+    onMouseUp={project.replicas.length > 1 ? handleMouseUp : undefined}
+    onMouseLeave={project.replicas.length > 1 ? handleMouseUp : undefined}
+    className={`
+        w-full rounded-xl shadow-2xl border border-white/5 
+        object-contain transition-all duration-300 select-none
+        ${project.replicas.length > 1 
+            ? "cursor-grab active:cursor-grabbing" 
+            : "cursor-default"}
+    `}
+/>
+                   {project.replicas.length > 1 && (
+    <div className="flex gap-4 mt-4">
+        <button 
+            onClick={() =>
+                setActiveIndex(prev =>
+                    prev === 0
+                        ? project.replicas.length - 1
+                        : prev - 1
+                )
+            }
+           className="absolute left-4 top-1/2 -translate-y-1/2 
+                 bg-black/40
+                 px-3 py-1  hover:bg-primary rounded-lg text-white transition "
+    >
+      ←
+    </button>
+
+    <button
+      onClick={() =>
+        setActiveIndex(prev =>
+          prev === project.replicas.length - 1
+            ? 0
+            : prev + 1
+        )
+      }
+      className="absolute right-4 top-1/2 -translate-y-1/2 
+                 bg-black/40 
+                 px-3 py-1 hover:bg-primary rounded-lg text-white transition "
+    >
+      →
+    </button>
+    </div>
+)}
+                </div>
+
+            </div>
+
+           
+
+        </div>
+    );
+};
         const WorksPage = ({ onWebsiteSelect }) => {
             const [selectedProject, setSelectedProject] = useState(null);
             const [activeCategory, setActiveCategory] = useState("Todos");
@@ -795,7 +937,7 @@ Especializado en producción audiovisual y diseño estratégico.</p>
                 return () => window.removeEventListener('keydown', handleKeyDown);
             }, [selectedProject]);
 
-            const categories = ["Todos", "Edición de Video / VFX", "Fotografías" , "Diseño Web"];
+            const categories = ["Todos", "Edición de Video / VFX","Diseño Gráfico", "Fotografías" , "Diseño Web"];
             const filteredProjects = activeCategory === "Todos" ? allProjectsData : allProjectsData.filter(p => p.category === activeCategory);
 
             return (
@@ -901,6 +1043,10 @@ Especializado en producción audiovisual y diseño estratégico.</p>
                                         </div>
                                     ) : selectedProject.type === 'video' ? (
                                         <div className="w-full h-full"><iframe className="w-full h-full" src={`${selectedProject.videoUrl}?autoplay=0&mute=0`} title={selectedProject.title} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe></div>
+                                  ) : selectedProject.type === 'design-comparison' ? (
+
+                              <DesignComparison project={selectedProject} />
+
                                     ) : selectedProject.type === 'local-video' ? (
                                         <div className="w-full h-full bg-[#0f0f0f] flex items-center justify-center">
                                             <video src={selectedProject.videoUrl} controls autoPlay className="max-w-full max-h-full" />
