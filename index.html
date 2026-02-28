@@ -529,7 +529,7 @@
                     </div>
                     {isMenuOpen && (
                         <div className="md:hidden absolute top-full left-0 w-full bg-white dark:bg-[#101322] border-b border-slate-200 dark:border-[#232948] p-6 flex flex-col gap-6 animate-in slide-in-from-top duration-300">
-                            <Link onClick={() => setIsMenuOpen(false)} to="/" className={`text-lg font-medium ${location.pathname === '/' ? 'text-primary' : ''}`}>Home</Link>
+                            <Link onClick={() => setIsMenuOpen(false)} to="/" className={`text-lg font-medium ${location.pathname === '/' ? 'text-primary' : ''}`}>Inicio</Link>
                             <Link onClick={() => setIsMenuOpen(false)} to="/works" className={`text-lg font-medium ${location.pathname === '/works' ? 'text-primary' : ''}`}>Proyectos</Link>
                             <Link onClick={() => setIsMenuOpen(false)} to="/about" className={`text-lg font-medium ${location.pathname === '/about' ? 'text-primary' : ''}`}>Sobre mí</Link>
                         </div>
@@ -1135,4 +1135,5 @@ const handleMouseUp = () => {
         root.render(<App />);
     </script>
 </body>
+
 </html>
