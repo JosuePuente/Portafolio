@@ -156,21 +156,16 @@
         ];
 
         const allProjectsData = [
+             { 
+    id: 13, 
+    type: "video",
+    category: "Edición de Video / VFX", 
+    title: "Lucha Libre AAA – Triplemanía", 
+    img: "img/triplemania.jpg", 
+    videoUrl: "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1134930487820175%2F&show_text=false&width=267&t=0",
+    desc: "Cobertura audiovisual del evento Triplemanía de Lucha Libre AAA, realizando captura de video y fotografía durante el espectáculo. El material fue utilizado para promoción y documentación del evento."
+},
            
-            { 
-                id: 11,
-                type: "design-comparison",
-                category: "Diseño Gráfico",
-                title: "Rediseño ArtFest",
-                img: "img/DiseñoGraficoArtfest.jpg", // miniatura para la card
-                originalImg: "img/DiseñoGraficoImagen Original.jpg",
-                replicas: [
-                    "img/DiseñoGraficoArtfest.jpg",
-                    "img/DiseñoGraficoCategorías.jpg",
-                    "img/DiseñoGraficoRegístrate Hoy.jpg"
-                ],
-                desc: "Propuesta de rediseño basada en la pieza original, manteniendo identidad visual pero mejorando composición, jerarquía tipográfica y contraste."
-            },
              { 
                 id: 9, 
                 type: "video",
@@ -190,6 +185,20 @@
                 replicas: [
                     "img/IngeniosityImagen Réplica.jpg",
                     
+                ],
+                desc: "Propuesta de rediseño basada en la pieza original, manteniendo identidad visual pero mejorando composición, jerarquía tipográfica y contraste."
+            },
+           { 
+                id: 11,
+                type: "design-comparison",
+                category: "Diseño Gráfico",
+                title: "Rediseño ArtFest",
+                img: "img/DiseñoGraficoArtfest.jpg", // miniatura para la card
+                originalImg: "img/DiseñoGraficoImagen Original.jpg",
+                replicas: [
+                    "img/DiseñoGraficoArtfest.jpg",
+                    "img/DiseñoGraficoCategorías.jpg",
+                    "img/DiseñoGraficoRegístrate Hoy.jpg"
                 ],
                 desc: "Propuesta de rediseño basada en la pieza original, manteniendo identidad visual pero mejorando composición, jerarquía tipográfica y contraste."
             },
@@ -719,11 +728,11 @@ Especializado en producción audiovisual y diseño estratégico.</p>
                         {selectedProject && (
                             <div onClick={() => setSelectedProject(null)} className="fixed inset-0 z-[100] flex items-center justify-center p-2 md:p-8 bg-black/90 backdrop-blur-sm transition-opacity">
                                 <div onClick={(e) => e.stopPropagation()} className={`relative w-full max-w-5xl h-[95vh] flex flex-col bg-background-dark rounded-xl shadow-2xl overflow-hidden ${
-    (selectedProject.id === 8 || selectedProject.id === 9) ? (selectedProject.id === 9 ? 'md:flex-row-reverse' : 'md:flex-row') : ''}`}>
+    (selectedProject.id === 8 || selectedProject.id === 9|| selectedProject.id === 13) ? (selectedProject.id === 9 ? 'md:flex-row-reverse' : 'md:flex-row') : ''}`}>
                                     <button onClick={() => setSelectedProject(null)} className="absolute top-4 right-4 md:top-6 md:right-6 z-20 text-white/70 hover:text-white bg-black/40 hover:bg-black/60 p-2 rounded-full transition-all"><span className="material-symbols-outlined">close</span></button>
                                     
                                     <div className={`bg-black flex items-center justify-center relative group overflow-hidden min-h-0 ${
-    (selectedProject.id === 8 || selectedProject.id === 9)
+    (selectedProject.id === 8 || selectedProject.id === 9|| selectedProject.id === 13)
         ? 'w-full md:w-2/3 flex-1'
         : 'aspect-video w-full'}`}>
                                         {selectedProject.type === 'gallery' ? (
@@ -748,16 +757,44 @@ Especializado en producción audiovisual y diseño estratégico.</p>
                                                     </div>
                                                 ))}
                                             </div>
-                                        ) : selectedProject.type === 'video' ? (
-                                            <div className="w-full h-full"><iframe className="w-full h-full" src={`${selectedProject.videoUrl}?autoplay=0&mute=0`} title={selectedProject.title} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe></div>
-                                        ) : selectedProject.type === 'local-video' ? (
+                                      ) : selectedProject.type === 'video' ? (
+
+    selectedProject.id === 13 ? (
+
+        <div className="w-full h-full flex items-center justify-center">
+            <div className="relative aspect-[9/16] w-[320px] md:w-[360px]">
+                <iframe
+                    className="absolute inset-0 w-full h-full"
+                    src={selectedProject.videoUrl}
+                    title={selectedProject.title}
+                    frameBorder="0"
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
+                    allowFullScreen
+                ></iframe>
+            </div>
+        </div>
+
+    ) : (
+
+        <div className="w-full h-full">
+            <iframe
+                className="w-full h-full"
+                src={selectedProject.videoUrl}
+                title={selectedProject.title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+            ></iframe>
+        </div>
+
+    )  ) : selectedProject.type === 'local-video' ? (
                                             <div className="w-full h-full bg-[#0f0f0f] flex items-center justify-center">
                                                 <video src={selectedProject.videoUrl} controls autoPlay className="max-w-full max-h-full" />
                                             </div>
                                         ) : null}
                                     </div>
 
-                                    <div className={`p-4 md:p-10 text-white text-left bg-slate-900 border-t md:border-t-0 md:border-x border-white/5 ${(selectedProject.id === 8 || selectedProject.id === 9) ? 'w-full md:w-1/3 flex flex-col justify-center overflow-y-auto custom-scrollbar' : 'shrink-0 overflow-hidden'}`}>
+                                    <div className={`p-4 md:p-10 text-white text-left bg-slate-900 border-t md:border-t-0 md:border-x border-white/5 ${(selectedProject.id === 8 || selectedProject.id === 9|| selectedProject.id === 13) ? 'w-full md:w-1/3 flex flex-col justify-center overflow-y-auto custom-scrollbar' : 'shrink-0 overflow-hidden'}`}>
                                         <div className="flex flex-col justify-between items-start gap-4 h-full">
                                             <div className="flex-1">
                                                 <div className="flex flex-wrap items-center gap-3 mb-4">
@@ -1012,11 +1049,11 @@ const handleMouseUp = () => {
                     {selectedProject && (
                         <div onClick={() => setSelectedProject(null)} className="fixed inset-0 z-[100] flex items-center justify-center p-2 md:p-8 bg-black/90 backdrop-blur-sm transition-opacity">
                             <div onClick={(e) => e.stopPropagation()} className={`relative w-full max-w-5xl h-[95vh] flex flex-col bg-background-dark rounded-xl shadow-2xl overflow-hidden ${
-    (selectedProject.id === 8 || selectedProject.id === 9) ? (selectedProject.id === 9 ? 'md:flex-row-reverse' : 'md:flex-row') : ''}`}>
+    (selectedProject.id === 8 || selectedProject.id === 9|| selectedProject.id === 13) ? (selectedProject.id === 9 ? 'md:flex-row-reverse' : 'md:flex-row') : ''}`}>
                                 <button onClick={() => setSelectedProject(null)} className="absolute top-4 right-4 md:top-6 md:right-6 z-20 text-white/70 hover:text-white bg-black/40 hover:bg-black/60 p-2 rounded-full transition-all"><span className="material-symbols-outlined">close</span></button>
                                 
                                 <div className={`bg-black flex items-center justify-center relative group overflow-hidden min-h-0 ${
-    (selectedProject.id === 8 || selectedProject.id === 9)
+    (selectedProject.id === 8 || selectedProject.id === 9|| selectedProject.id === 13)
         ? 'w-full md:w-2/3 flex-1'
         : 'aspect-video w-full'}`}>
                                     {selectedProject.type === 'gallery' ? (
@@ -1041,9 +1078,39 @@ const handleMouseUp = () => {
                                                 </div>
                                             ))}
                                         </div>
-                                    ) : selectedProject.type === 'video' ? (
-                                        <div className="w-full h-full"><iframe className="w-full h-full" src={`${selectedProject.videoUrl}?autoplay=0&mute=0`} title={selectedProject.title} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe></div>
-                                  ) : selectedProject.type === 'design-comparison' ? (
+                                  ) : selectedProject.type === 'video' ? (
+
+    selectedProject.id === 13 ? (
+
+        <div className="w-full h-full flex items-center justify-center">
+            <div className="relative aspect-[9/16] w-[320px] md:w-[360px]">
+                <iframe
+                    className="absolute inset-0 w-full h-full"
+                    src={selectedProject.videoUrl}
+                    title={selectedProject.title}
+                    frameBorder="0"
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
+                    allowFullScreen
+                ></iframe>
+            </div>
+        </div>
+
+    ) : (
+
+        <div className="w-full h-full">
+            <iframe
+                className="w-full h-full"
+                src={selectedProject.videoUrl}
+                title={selectedProject.title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+            ></iframe>
+        </div>
+
+    )
+
+) : selectedProject.type === 'design-comparison' ? (
 
                               <DesignComparison project={selectedProject} />
 
@@ -1054,7 +1121,7 @@ const handleMouseUp = () => {
                                     ) : null}
                                 </div>
 
-                                <div className={`p-4 md:p-10 text-white text-left bg-slate-900 border-t md:border-t-0 md:border-x border-white/5 ${(selectedProject.id === 8 || selectedProject.id === 9) ? 'w-full md:w-1/3 flex flex-col justify-center overflow-y-auto custom-scrollbar' : 'shrink-0 overflow-hidden'}`}>
+                                <div className={`p-4 md:p-10 text-white text-left bg-slate-900 border-t md:border-t-0 md:border-x border-white/5 ${(selectedProject.id === 8 || selectedProject.id === 9 || selectedProject.id === 13) ? 'w-full md:w-1/3 flex flex-col justify-center overflow-y-auto custom-scrollbar' : 'shrink-0 overflow-hidden'}`}>
                                     <div className="flex flex-col gap-4 h-full">
                                         <div className="flex flex-wrap items-center gap-4">
                                             <h2 className="text-2xl md:text-4xl font-bold break-words leading-tight tracking-tight">{selectedProject.title}</h2>
@@ -1135,5 +1202,4 @@ const handleMouseUp = () => {
         root.render(<App />);
     </script>
 </body>
-
 </html>
