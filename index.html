@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portafolio de Josué Puente enfocado en edición de video, motion graphics y diseño gráfico." />
+  <title>Josué Puente | Portafolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;700;800&family=Material+Symbols+Outlined&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#06060a;--line:rgba(255,255,255,.09);--text:#f4f1ff;--muted:rgba(244,241,255,.68);
+      --purple:#a855f7;--purple2:#7c3aed;--orange:#fb923c;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--text);min-height:100vh;background:radial-gradient(circle at top left,rgba(168,85,247,.2),transparent 28%),radial-gradient(circle at top right,rgba(251,146,60,.12),transparent 26%),linear-gradient(180deg,#06060a 0%,#090912 35%,#07070c 100%)}
+    body.menu-open,body.modal-open{overflow:hidden}
+    body::before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(180deg,rgba(0,0,0,.24),transparent 70%);z-index:-1}
+    a{color:inherit;text-decoration:none} img,video{display:block;width:100%} button{font:inherit}
+    .material-symbols-outlined{font-family:"Material Symbols Outlined";font-variation-settings:"FILL" 0,"wght" 400,"GRAD" 0,"opsz" 24;font-size:20px;line-height:1}
+    .container{width:min(1280px,calc(100% - 24px));margin:0 auto}
+    .font-display{font-family:"Space Grotesk",Inter,Arial,sans-serif}
+    .header{position:sticky;top:0;z-index:40;backdrop-filter:blur(18px);background:rgba(7,7,12,.8);border-bottom:1px solid var(--line)}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0}
+    .brand{display:flex;align-items:center;gap:12px}.brand-mark{width:48px;height:48px;border-radius:18px;display:grid;place-items:center;border:1px solid var(--line);background:rgba(255,255,255,.05);box-shadow:0 0 0 1px rgba(168,85,247,.08),0 16px 60px rgba(0,0,0,.32);font-weight:800}.brand-name{font-weight:800;letter-spacing:.22em;font-size:1.02rem;font-family:"Space Grotesk",sans-serif}.brand-role{font-size:12px;color:rgba(244,241,255,.58)}
+    .nav{display:flex;align-items:center;gap:26px}.nav a,.nav button{color:rgba(244,241,255,.78);font-size:14px;font-weight:600;background:transparent;border:0;cursor:pointer;padding:0}.nav a:hover,.nav button:hover{color:#fff}
+    .nav-mobile-btn{display:none;align-items:center;justify-content:center;width:42px;height:42px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:#fff;cursor:pointer}
+    .mobile-menu{display:none}
+    .mobile-menu-inner{padding:16px 0 20px;display:flex;flex-direction:column;gap:16px}
+    .mobile-menu a,.mobile-menu button{font-size:18px;font-weight:600;text-align:left;background:transparent;border:0;color:rgba(244,241,255,.84);cursor:pointer}
+    .hero{min-height:calc(100vh - 90px);display:grid;align-items:center;padding:42px 0 24px}.hero-grid{display:grid;grid-template-columns:1fr;gap:0;align-items:center}.hero-copy h1{margin:0;font-family:"Space Grotesk",sans-serif;font-size:clamp(3rem,8vw,5.9rem);line-height:.94;letter-spacing:-.05em}.hero-copy p{max-width:640px}.subtle{color:var(--muted);line-height:1.8}
+    .pill{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);background:rgba(255,255,255,.05);padding:10px 14px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:rgba(244,241,255,.7);margin-bottom:24px}
+    .gradient-text{background:linear-gradient(90deg,#fff 0%,#d8c9ff 35%,#b46cff 70%,#fb923c 120%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:18px;padding:16px 22px;font-weight:800;border:1px solid transparent;cursor:pointer}.btn-primary{background:linear-gradient(90deg,var(--purple),var(--purple2),var(--orange));color:#fff;box-shadow:0 0 0 1px rgba(168,85,247,.14),0 18px 50px rgba(124,58,237,.16)}.btn-secondary{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.92)}
+    .eyebrow{font-size:12px;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:#c4b5fd}
+    .title{margin:0;font-family:"Space Grotesk",sans-serif;font-size:clamp(2rem,4vw,3.4rem);line-height:1.02;letter-spacing:-.04em}
+    .section{padding:26px 0}
+    .panel{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));box-shadow:0 22px 70px rgba(0,0,0,.28)}
+    .hover-card{transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease,background .22s ease}.hover-card:hover{transform:translateY(-5px);border-color:rgba(168,85,247,.28);box-shadow:0 24px 70px rgba(0,0,0,.34);background:rgba(255,255,255,.04)}
+    .project-grid{display:grid;gap:16px;grid-template-columns:repeat(4,minmax(0,1fr))}
+    .project-card{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:rgba(255,255,255,.03);min-width:0}
+    .design-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+    .design-card{
+      border:1px solid var(--line);
+      border-radius:24px;
+      overflow:hidden;
+      background:rgba(255,255,255,.03);
+      text-align:left;
+      padding:0;
+      cursor:pointer;
+      color:inherit;
+      min-width:0;
+    }
+    .design-card-media{background:#0d0d14}
+    .design-card-media img{width:100%;height:100%;object-fit:cover;display:block}
+    .design-card-body{padding:16px 16px 18px}
+    .design-card-body h3{margin:0;font-family:"Space Grotesk",sans-serif;font-size:17px;line-height:1.15}
+    .design-card-body p{margin:8px 0 0;color:var(--muted);font-size:14px;line-height:1.55}
+    .design-modal{
+      position:fixed;
+      inset:0;
+      z-index:220;
+      display:grid;
+      place-items:center;
+      padding:18px;
+      background:rgba(3,3,8,.72);
+      backdrop-filter:blur(18px);
+    }
+    .design-modal[hidden]{display:none}
+    .design-modal-panel{
+      width:min(1120px,100%);
+      max-height:min(90vh,980px);
+      overflow:auto;
+      border:1px solid var(--line);
+      border-radius:28px;
+      background:linear-gradient(180deg,rgba(15,15,24,.98),rgba(7,7,12,.98));
+      box-shadow:0 30px 90px rgba(0,0,0,.55);
+      position:relative;
+      z-index:1;
+    }
+    .design-modal-backdrop{position:absolute;inset:0}
+    .design-modal-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:16px;
+      padding:22px 22px 18px;
+      border-bottom:1px solid var(--line);
+    }
+    .design-modal-head h3{margin:8px 0 0;font-family:"Space Grotesk",sans-serif;font-size:clamp(1.4rem,2.2vw,2rem)}
+    .modal-close{
+      width:42px;
+      height:42px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.1);
+      background:rgba(255,255,255,.04);
+      color:#fff;
+      cursor:pointer;
+      flex:0 0 auto;
+    }
+    .gallery-layout{display:grid;gap:14px;padding:20px 22px 22px}
+    .gallery-main{
+      border-radius:24px;
+      overflow:hidden;
+      background:#0b0b11;
+      border:1px solid var(--line);
+      aspect-ratio:16/10;
+    }
+    .gallery-main img{width:100%;height:100%;object-fit:cover;display:block}
+    .gallery-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .gallery-thumb{
+      padding:0;
+      border:1px solid var(--line);
+      border-radius:18px;
+      overflow:hidden;
+      background:#0b0b11;
+      cursor:pointer;
+      aspect-ratio:1/1;
+    }
+    .gallery-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .gallery-thumb.active{border-color:rgba(168,85,247,.55);box-shadow:0 0 0 1px rgba(168,85,247,.15) inset}
+    .browser-shell{border:1px solid var(--line);border-radius:24px;overflow:hidden;background:#0b0b11}
+    .browser-top{display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.03)}
+    .browser-controls{display:flex;gap:6px}
+    .browser-controls span{width:10px;height:10px;border-radius:999px;background:rgba(255,255,255,.24)}
+    .browser-address{flex:1;min-width:0;padding:10px 14px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);font-size:12px;color:rgba(244,241,255,.72);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .browser-newtab{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:40px;
+      padding:0 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.04);
+      color:#fff;
+      white-space:nowrap;
+      font-size:12px;
+      font-weight:700;
+    }
+    .browser-frame{width:100%;height:min(66vh,720px);border:0;background:#fff}
+    .web-tabs{display:flex;flex-wrap:wrap;gap:10px;padding:16px 22px 22px}
+    .web-tab{
+      padding:11px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.04);
+      color:#fff;
+      cursor:pointer;
+      font-size:13px;
+      font-weight:700;
+    }
+    .web-tab.active{border-color:rgba(168,85,247,.5);background:rgba(168,85,247,.12);color:#f5f3ff}
+    .design-section-head{margin-bottom:18px}
+    .design-web-ui-eyebrow{font-size:40px;color: whitesmoke;  letter-spacing: -0.01em;}
+    .branding-list{display:grid;gap:28px}
+    .branding-study{
+      padding:22px;
+      border-radius:28px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.025));
+      box-shadow:0 22px 70px rgba(0,0,0,.24);
+    }
+    .branding-study + .branding-study{margin-top:18px}
+    .study-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+    .study-head h3{margin:8px 0 0;font-family:"Space Grotesk",sans-serif;font-size:clamp(1.6rem,3vw,2.8rem);line-height:1.02}
+    .study-lead{max-width:860px;color:var(--muted);line-height:1.75;margin:0}
+    .study-gallery{display:grid;gap:12px;grid-template-columns:repeat(3,minmax(0,1fr))}
+    .study-shot{
+      padding:0;
+      border:0;
+      border-radius:18px;
+      overflow:hidden;
+      background:#0b0b11;
+      cursor:pointer;
+      aspect-ratio:4/3;
+      width:100%;
+    }
+    .study-shot img{width:100%;height:100%;object-fit:cover;display:block}
+    .study-mobile-list{display:none}
+    .study-mobile-card{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      width:100%;
+      padding:16px;
+      border-radius:20px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:inherit;
+      text-align:left;
+      cursor:pointer;
+    }
+    .study-mobile-card img{
+      width:92px;
+      height:92px;
+      object-fit:cover;
+      border-radius:16px;
+      flex:none;
+    }
+    .study-mobile-card h3{margin:0;font-family:"Space Grotesk",sans-serif;font-size:1.05rem}
+    .study-mobile-card p{margin:8px 0 0;color:var(--muted);font-size:13px;line-height:1.55}
+    .study-mobile-card .eyebrow{margin-bottom:6px}
+    .project-detail-back{display:inline-flex;margin-bottom:18px}
+    .project-detail{padding-top:8px}
+    .lightbox{
+      position:fixed;
+      inset:0;
+      z-index:260;
+      display:grid;
+      place-items:center;
+      padding:18px;
+      background:rgba(3,3,8,.88);
+      backdrop-filter:blur(18px);
+    }
+    .lightbox[hidden]{display:none}
+    .lightbox-backdrop{position:absolute;inset:0;}
+    .lightbox-panel{
+      position:relative;
+      z-index:1;
+      width:min(1120px,100%);
+      max-height:90vh;
+      display:grid;
+      gap:16px;
+      padding:18px;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:28px;
+      background:linear-gradient(180deg,rgba(14,14,20,.98),rgba(9,9,14,.96));
+      box-shadow:0 30px 120px rgba(0,0,0,.55);
+      overflow:auto;
+    }
+    .lightbox-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:16px;
+    }
+    .branding-project-title{max-width:760px}
+    .branding-project-title h3{margin:8px 0 0;font-family:"Space Grotesk",sans-serif;font-size:clamp(1.5rem,3vw,2.6rem);line-height:1.04}
+    .branding-project-title p{margin:10px 0 0;color:var(--muted);line-height:1.7}
+    .lightbox-close{
+      width:44px;
+      height:44px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.1);
+      background:rgba(255,255,255,.05);
+      color:#fff;
+      cursor:pointer;
+      flex:none;
+    }
+    .branding-project-story{
+      display:grid;
+      gap:12px;
+      padding-right:4px;
+      align-content:start;
+    }
+    .branding-story-item{
+      position:relative;
+      height:auto;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:22px;
+      overflow:hidden;
+      background:linear-gradient(180deg,rgba(18,18,26,.98),rgba(8,8,12,.98));
+      cursor:pointer;
+    }
+    .branding-story-item img{
+      width:100%;
+      height:auto;
+      display:block;
+      background:#fff;
+    }
+    @media (max-width:768px){
+      .lightbox{padding:12px}
+      .lightbox-panel{padding:14px;border-radius:22px;max-height:92vh}
+      .lightbox-head{flex-direction:column;align-items:flex-start}
+      .lightbox-close{position:absolute;top:14px;right:14px}
+      .branding-story-item{border-radius:18px}
+    }
+
+    .thumb{position:relative;aspect-ratio:16/10;overflow:hidden;background:#0d0d14}
+    .thumb img,.thumb video{width:100%;height:100%;object-fit:cover;display:block;background:transparent;}
+    .badge{position:absolute;left:14px;bottom:14px;z-index:2;padding:8px 10px;border-radius:999px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.1);font-size:12px;font-weight:800;color:#fff}
+    .project-body{padding:16px 16px 18px}.project-body h3{margin:0;font-family:"Space Grotesk",sans-serif;font-size:17px;line-height:1.15}.project-body p{margin:8px 0 0;color:var(--muted);font-size:14px;line-height:1.55}.project-body .small{margin-top:10px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,241,255,.45)}
+    .route-hero-grid{display:grid;gap:22px;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:center}
+    .route-hero-video .route-preview{order:0;}
+    .route-hero-video .route-copy{order:1}
+    .route-preview-grid{display:grid;gap:14px;grid-template-columns:repeat(2,minmax(0,1fr))}
+    .demo-grid{display:grid;gap:18px;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}
+    .timeline-grid{display:grid;gap:14px;grid-template-columns:repeat(3,minmax(0,1fr))}
+    .reels-layout{
+    width:100%;
+}.reels-copy{padding-right:10px}
+  .reels-mosaic{
+    display:grid;
+    object-fit: cover;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+}.vertical-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+ .reel-card .project-body{padding:14px 14px 16px}
+    .reel-portrait{min-height:0}
+    .reel-portrait .thumb{aspect-ratio:9/16}
+    .reel-landscape .thumb{aspect-ratio:4/3}
+    .reel-portrait .project-body h3,.reel-landscape .project-body h3{font-size:15px}
+    .reel-portrait .project-body p,.reel-landscape .project-body p{font-size:12px}
+    .video-shell{position:relative;overflow:hidden;background:transparent}
+    .video-shell video{width:100%;height:100%;object-fit:cover;display:block}
+    .video-shell .video-overlay{position:absolute;left:0;right:0;bottom:0;padding:12px;display:flex;flex-direction:column;gap:10px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.74));opacity:0;transform:translateY(10px);transition:opacity .2s ease,transform .2s ease}
+    .video-shell:hover .video-overlay,.video-shell:focus-within .video-overlay{opacity:1;transform:translateY(0)}
+    .video-shell .video-top{display:flex;justify-content:flex-end}
+    .video-shell .video-btn{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:999px;border:1px solid var(--line);background:rgba(0,0,0,.52);color:#fff;cursor:pointer}
+    .video-shell .video-progress{display:flex;align-items:center;gap:10px}
+    .video-shell .video-progress input[type="range"]{flex:1;appearance:none;height:4px;border-radius:999px;background:rgba(255,255,255,.18);outline:none}
+    .video-shell .video-progress input[type="range"]::-webkit-slider-thumb{appearance:none;width:12px;height:12px;border-radius:999px;background:linear-gradient(90deg,var(--purple),var(--orange));border:0}
+    .video-shell .video-progress input[type="range"]::-moz-range-thumb{width:12px;height:12px;border-radius:999px;background:linear-gradient(90deg,var(--purple),var(--orange));border:0}
+    .video-shell .video-time{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,241,255,.82);min-width:44px}
+    .video-shell.ratio-wide{aspect-ratio:16/10}
+    .video-shell.ratio-portrait{aspect-ratio:9/16}
+    .video-shell.ratio-square{aspect-ratio:1/1}
+    .route-preview video{
+    border-radius:22px !important;
+}
+    @media (hover:none){
+      .video-shell .video-overlay{opacity:1;transform:none}
+    }
+    .specials{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:18px;padding-bottom:24px}.special-card{display:flex;gap:14px;padding:18px 16px;border-radius:22px;border:1px solid transparent;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease,background .22s ease}.special-card:hover{transform:translateY(-4px);border-color:rgba(168,85,247,.35);background:rgba(255,255,255,.05);box-shadow:0 22px 70px rgba(0,0,0,.3)}.special-icon{width:44px;height:44px;border-radius:16px;display:grid;place-items:center;background:rgba(168,85,247,.12);border:1px solid rgba(168,85,247,.2);color:#d8b4fe;flex:none;margin-top:2px}.special-card h3{margin:0 0 6px;font-family:"Space Grotesk",sans-serif;font-size:18px;line-height:1.1}.special-card p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
+    .footer{border-top:1px solid var(--line);background:rgba(0,0,0,.22);margin-top:8px}.footer-grid{padding:24px 0 26px;display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:0}.footer-box{min-height:178px;padding:18px 20px;border-right:1px solid rgba(255,255,255,.06)}.footer-box:last-child{border-right:0}.footer-box h3{margin:0;font-family:"Space Grotesk",sans-serif;font-size:18px;letter-spacing:.02em;color:#cfe0ff}.about-row{display:flex;gap:18px;align-items:flex-start;margin-top:16px}.avatar{width:90px;height:90px;border-radius:999px;object-fit:cover;border:1px solid var(--line);flex:none}.about-row p,.footer-box p{margin:0;color:var(--muted);line-height:1.65;font-size:14px}.tool-grid{display:grid;grid-template-columns:repeat(4,42px);gap:10px;margin-top:16px}.tool{width:42px;height:42px;border-radius:10px;display:grid;place-items:center;font-weight:800;color:#fff;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}.tool.pr{color:#a5b4fc;background:rgba(79,70,229,.16)}.tool.ae{color:#c084fc;background:rgba(147,51,234,.18)}.tool.ps{color:#7dd3fc;background:rgba(8,145,178,.16)}.tool.ai{color:#fdba74;background:rgba(249,115,22,.16)}.tool.id{color:#f472b6;background:rgba(190,24,93,.18)}.tool.lr{color:#38bdf8;background:rgba(12,74,110,.16)}.tool.x{color:#fff;background:rgba(255,255,255,.06)}.tool.bl{color:#fb923c;background:rgba(180,83,9,.18)}.contact-list{display:grid;gap:10px;margin-top:16px}.contact-item{display:flex;align-items:center;gap:10px;color:rgba(244,241,255,.8);font-size:14px}.cv-btn{display:inline-flex;margin-top:16px;padding:12px 18px;border-radius:14px;background:linear-gradient(90deg,var(--purple),var(--purple2));color:#fff;font-weight:800;font-size:13px}.social-row{display:flex;gap:18px;margin-top:22px;align-items:center}.social-row a{color:rgba(244,241,255,.8);font-weight:700;font-size:20px}
+    .placeholder{padding:70px 0;color:rgba(244,241,255,.65);text-align:center}.hero-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}.hero-links a{display:inline-flex;padding:10px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:rgba(244,241,255,.7);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.18em}
+    .section-block{padding-top:0}
+    @media (max-width:1200px){.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.timeline-grid{grid-template-columns:1fr 1fr}.route-hero-grid,.demo-grid{grid-template-columns:1fr}.route-preview-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media (max-width:1024px){.specials,.footer-grid{grid-template-columns:1fr 1fr}.footer-box{border-right:0;border-bottom:1px solid rgba(255,255,255,.06)}.footer-box:last-child{border-bottom:0}}
+    
+    .hero-design-image{
+  width:100%;
+width:400px;
+
+       height:260px;
+  border-radius:22px;
+  object-fit:cover;
+  border:1px solid var(--line);
+}
+
+@media (max-width:768px){
+  .hero-design-image{
+    max-width:none;
+    width:300px;
+    height:220px;
+  }
+}
+    
+    
+    @media (max-width:768px){
+      html,body{ width:100%;
+
+    max-width:100%;overflow-x:hidden}
+
+  
+      body.menu-open{overflow:hidden}
+      body.modal-open{overflow:hidden}
+      .container{width:min(1280px,calc(100% - 16px))}
+      .header{backdrop-filter:blur(14px)}
+      .header-inner{padding:10px 0}
+      .brand{gap:10px}
+      .brand-mark{width:40px;height:40px;border-radius:14px}
+      .brand-name{font-size:.86rem;letter-spacing:.14em;line-height:1.05}
+      .brand-role{display:none}
+      .nav{display:none}
+      .nav-mobile-btn{display:inline-flex;width:40px;height:40px;border-radius:12px}
+      .hero{min-height:auto;padding:14px 0 6px}
+      .hero-copy h1{font-size:clamp(2.15rem,12vw,3.25rem);line-height:.94}
+      .hero-copy p{font-size:14px;max-width:100%;line-height:1.65;margin-top:18px !important}
+      .pill{margin-bottom:16px;padding:8px 12px;font-size:11px;letter-spacing:.22em}
+      .cta-row{gap:10px;margin-top:18px}
+      .btn{width:100%;padding:13px 16px;border-radius:16px;font-size:14px}
+      .section{padding:14px 0}
+      .section-block{padding-top:0}
+      .panel{border-radius:24px}
+      .project-grid,.timeline-grid,.route-preview-grid,.specials,.footer-grid,.reels-layout,.design-grid{grid-template-columns:1fr}
+      .study-mobile-list{display:grid;gap:12px}
+      .route-hero-grid,.demo-grid{grid-template-columns:1fr;gap:14px}
+      .route-hero-grid{
+        grid-template-columns:1fr !important;
+        grid-template-areas:
+          "copy"
+          "preview"
+          "actions" !important;
+      }
+      .reels-layout{
+        display:flex;
+        flex-direction:column;
+        gap:14px;
+      }
+      .reels-copy{padding-right:0}
+      .reels-copy .title{font-size:clamp(1.8rem,8vw,2.5rem)}
+      .reels-mosaic{
+        display:flex;
+        overflow-x:auto;
+        gap:12px;
+        padding:0 8px 12px;
+        margin:0 -8px;
+        scroll-snap-type:x mandatory;
+        -webkit-overflow-scrolling:touch;
+        scrollbar-width:none;
+      }
+      .reels-mosaic::-webkit-scrollbar{display:none}
+      .vertical-grid{
+        display:flex;
+        overflow-x:auto;
+        gap:12px;
+        padding:0 8px 12px;
+        margin:0 -8px;
+        scroll-snap-type:x mandatory;
+        -webkit-overflow-scrolling:touch;
+        scrollbar-width:none;
+      }
+      .vertical-grid::-webkit-scrollbar{display:none}
+      .reel-card{
+        flex:0 0 82%;
+        min-width:82%;
+        scroll-snap-align:start;
+      }
+      .reel-card .thumb{aspect-ratio:9/16}
+      .reel-card.reel-landscape .thumb{aspect-ratio:4/3}
+      .vertical-grid .reel-card{
+        flex:0 0 82%;
+        min-width:82%;
+      }
+      .route-copy{order:0}
+      .route-preview{order:1}
+      .route-actions{order:2}
+      .route-hero-video .route-preview{margin-bottom:0}
+      .route-hero-video .route-preview video{aspect-ratio:16/10;height:auto;max-height:240px;border-radius:18px}
+      .route-hero-video .route-preview button{right:12px;top:12px;padding:7px}
+      .route-actions .btn{width:100%}
+      .route-preview-grid{display:block}
+      .route-preview-grid img{height:170px}
+      .route-preview-grid img + img{display:none}
+      .route-hero-grid .route-copy .subtle{font-size:14px;line-height:1.6}
+      .project-grid,.timeline-grid{
+        display:flex;
+        overflow-x:auto;
+        gap:12px;
+        padding-bottom:12px;
+        margin-right:-8px;
+        padding-right:8px;
+        scroll-snap-type:x mandatory;
+        -webkit-overflow-scrolling:touch;
+        scrollbar-width:none;
+      }
+      .project-grid::-webkit-scrollbar,.timeline-grid::-webkit-scrollbar{display:none}
+      .project-grid > .project-card,
+      .timeline-grid > .timeline{
+        flex:0 0 82%;
+        min-width:82%;
+        scroll-snap-align:start;
+      }
+      .timeline-grid{
+        gap:16px;
+        scroll-snap-type:x mandatory;
+        -webkit-overflow-scrolling:touch;
+        scroll-padding-left:8px;
+      }
+      .timeline-grid > .timeline{
+        flex:0 0 90%;
+        min-width:90%;
+      }
+      .timeline-grid > .timeline{padding:18px 16px 16px 18px}
+      .timeline-grid{align-items:stretch}
+      .project-grid{scroll-padding-left:8px}
+      .demo-grid{grid-template-columns:1fr}
+      .demo-grid > *{min-width:0}
+      .project-card{border-radius:18px}
+      .design-card-media{aspect-ratio:16/9}
+      .thumb{aspect-ratio:16/9}
+      .badge{left:10px;bottom:10px;padding:6px 8px;font-size:10px}
+      .project-body{padding:12px 12px 14px}
+      .project-body h3{font-size:15px}
+      .project-body p{font-size:12px;line-height:1.5}
+      .project-body .small{margin-top:8px;font-size:11px;letter-spacing:.14em}
+      .specials{gap:12px;margin-top:14px;padding-bottom:18px}
+      .special-card{padding:16px 14px}
+      .special-card h3{font-size:16px}
+      .special-card p{font-size:13px}
+      .footer{margin-top:6px}
+      .footer-grid{padding:16px 0 18px}
+      .footer-box{min-height:auto;padding:14px 0;border-right:0;border-bottom:1px solid rgba(255,255,255,.06)}
+      .footer-box:last-child{border-bottom:0}
+      .footer-box h3{font-size:16px}
+      .about-row{gap:12px}
+      .avatar{width:62px;height:62px}
+      .about-row p,.footer-box p{font-size:13px;line-height:1.55}
+      .tool-grid{grid-template-columns:repeat(4,36px);gap:8px}
+      .tool{width:36px;height:36px;border-radius:9px;font-size:13px}
+      .contact-list{gap:8px}
+      .contact-item{font-size:13px;gap:8px}
+      .cv-btn{width:100%;justify-content:center}
+      .social-row{gap:12px;flex-wrap:wrap;margin-top:16px}
+      
+
+.mobile-menu{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100vw;
+
+    height:100vh;
+
+
+
+    z-index:9999;
+
+
+
+    display:block;
+
+
+
+    background:rgba(6,6,10,.98);
+
+    backdrop-filter:blur(18px);
+
+
+
+    transform:translateX(100%);
+
+    opacity:0;
+
+    pointer-events:none;
+
+
+
+    transition:transform .28s ease, opacity .2s ease;
+
+
+
+    overflow-y:auto;
+
+}
+      .mobile-menu .brand-role{display:block}
+      .mobile-menu.open{transform:translateX(0);opacity:1;pointer-events:auto}
+      .mobile-menu-inner{
+        min-height:100%;
+        padding:14px 18px 22px;
+        display:flex;
+        flex-direction:column;
+        gap:18px;
+      }
+      .mobile-menu-head{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:12px;
+        padding-bottom:8px;
+      }
+      .mobile-menu-nav{
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+        padding-top:6px;
+      }
+      .mobile-menu-link{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-height:52px;
+  padding:6px 0;
+  font-size:20px;
+  font-weight:600;
+  color:#f4f1ff;
+}
+
+.mobile-menu-link .material-symbols-outlined{
+  font-size:22px;
+  color:rgba(244,241,255,.72);
+}
+
+.mobile-menu-link.active{
+  color:#c084fc;
+}
+
+.mobile-menu-divider{
+  height:1px;
+  background:rgba(255,255,255,.08);
+  margin:2px 0;
+}
+
+.mobile-social a{
+  font-size:22px;
+  color:rgba(244,241,255,.9);
+}
+    }
+    @media (max-width:480px){
+      .container{width:min(1280px,calc(100% - 18px))}
+      .hero-copy h1{font-size:clamp(2.1rem,14vw,3.2rem)}
+      .title{font-size:clamp(1.7rem,8vw,2.4rem)}
+      .eyebrow{letter-spacing:.22em}
+      .project-body .small{letter-spacing:.14em}
+      .cv-btn{width:100%;justify-content:center}
+      .contact-item{font-size:13px;gap:8px}
+      .design-grid{grid-template-columns:1fr}
+      .gallery-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .browser-top{flex-wrap:wrap}
+      .browser-address{order:3;flex-basis:100%}
+      .browser-frame{height:min(54vh,560px)}
+    }
+    @media (min-width:769px){.nav{display:flex}.nav-mobile-btn{display:none}}
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    const app = document.getElementById("app");
+    const brand = { name: "JOSUÉ PUENTE", role: "Lic. Multimedia y Animación Digital" };
+    const specialties = [
+      { icon: "video_library", title: "Edición de Video", desc: "Reels, TikToks, corporativos, eventos y más." },
+      { icon: "animation", title: "Motion Graphics", desc: "Animación de textos, gráficos e ilustraciones." },
+      { icon: "palette", title: "Diseño Gráfico", desc: "Branding, identidad visual, editorial y publicidad." },
+      { icon: "videocam", title: "Producción", desc: "Grabación, dirección y cobertura de eventos." }
+    ];
+    const tools = [['<img src="img/Pr.png" alt="PremierePro">',"pr"],['<img src="img/AE.png" alt="After Effects">',"ae"],['<img src="img/Ps.png" alt="Photoshop">',"ps"],['<img src="img/Ai.png" alt="Illustrator">',"ai"],['<img src="img/Maya.png" alt="Maya">',"lr"],['<img src="img/Blender.png" alt="Blender">',"bl"],['<img src="img/VsCode.png" alt="VSCode">',"x"]];
+    const videoSections = [
+      { id:"corporate", title:"Videos Corporativos", subtitle:"Contenido para marcas, eventos y comunicación institucional.", items:[
+        { title:"Gráficos para Canal 53 TvUni", category:"Broadcast graphics", desc:"Animación de logotipo, supers y elementos gráficos para NutriActivate en 2016.", mediaType:"video", src:"img/Nutriac.mp4" },
+        { title:"La Cultura de la Denuncia, ¿Buena o Mala?", category:"Marketing audiovisual", desc:"Producción audiovisual orientada a comunicación organizacional.", mediaType:"video", src:"img/SoftControls.mp4" },
+        { title:"Lucha Libre World Wide AAA", category:"Video corporativo", desc:"Cobertura audiovisual de Triplemanía XXXII, para redes sociales de Lucha Libre World Wide AAA.", mediaType:"video", src:"img/TriplemaniaMTY.mp4" },
+        { title:"Animación de personaje", category:"Motion / VFX", desc:"Intro animada desarrollada mediante composición 3D y motion graphics.", mediaType:"video", src:"img/intro.mp4" }
+      ]}
+    , { id:"shorts", title:"Reels / TikToks / Shorts", subtitle:"Piezas cortas para marcas, productos y contenido social.", items:[
+        { title:"Playera 3D Animada", category:"Contenido vertical", desc:"Montaje audiovisual y composición 3D.", mediaType:"video", src:"img/playera.mp4" },
+        { title:"Video Corporativo NOM-035", category:"Contenido vertical", desc:"Video informativo sobre la NOM-035.", mediaType:"video", src:"img/Nom035.mp4" },
+        { title:"Concientización sobre el Autismo", category:"Contenido vertical", desc:"Video informativo orientado a la concientización sobre el autismo.", mediaType:"video", src:"img/Autismo.mp4" },
+        { title:"GR8 Marketing Inmobiliario", category:"Edición de contenido", desc:"Marketing inmobiliario y promoción de marca en redes sociales.", mediaType:"video", src:"img/VideoPrueba.mp4" }
+      ]},
+      
+      { id:"motion", title:"Motion Graphics", subtitle:"Animación, overlays, identidades en movimiento y transición visual.", items:[
+        { title:"Intro Twitch", category:"Motion graphics", desc:"Intro animada con enfoque en branding para streaming.", mediaType:"video", src:"img/twitch.mp4", poster:"img/twitch.jpg" },
+        { title:"Transición Twitch", category:"Motion graphics", desc:"Transiciones visuales pensadas para continuidad de emisiones.", mediaType:"video", src:"img/twitchtransicion.mp4", poster:"img/twitch2.jpg" },
+        { title:"Cierre Twitch", category:"Motion graphics", desc:"Pantalla final animada de despedida.", mediaType:"video", src:"img/twitchfinal2_1.mp4", poster:"img/twitch2.jpg" },
+        { title:"Animación Lata Conceptual", category:"Cobertura y evento", desc:"Ejercicio de motion graphics y composición visual", mediaType:"video", src:"img/LATA.mp4", poster:"img/boda.jpg" }
+      ]}];
+         const designSections = [
+      { id:"branding", title:"Branding e Identidad Visual", subtitle:"Sistemas gráficos, logos y identidades coherentes.", items:[
+        { title:"Marca Cafe", category:"Identidad visual", desc:"Construcción de identidad con un lenguaje limpio y versátil.", mediaType:"image", src:"img/EpikzLogo.png" },
+        { title:"Fitlife", category:"Branding", desc:"Sistema visual orientado a una marca moderna y adaptable.", mediaType:"image", src:"img/luxlogo.jpg" },
+        { title:"Bloom", category:"Identidad visual", desc:"Propuesta de marca con una estética elegante y actual.", mediaType:"image", src:"img/fav.jpg" },
+        { title:"Nómada", category:"Branding", desc:"Lenguaje visual minimalista para una marca de carácter distintivo.", mediaType:"image", src:"img/tecmileniologo.jpg" }
+      ]},
+      { id:"editorial", title:"Diseño Editorial", subtitle:"Composición, jerarquía tipográfica y piezas informativas.", items:[
+        { title:"Catálogo de Productos", category:"Editorial", desc:"Maquetación editorial con lectura clara y ritmo visual.", mediaType:"image", src:"img/DiseñoGraficoArtfest.jpg" },
+        { title:"Revista Corporativa", category:"Editorial", desc:"Diseño de contenido largo con foco en orden y elegancia.", mediaType:"image", src:"img/DiseñoGraficoCategorías.jpg" },
+        { title:"Lookbook", category:"Editorial", desc:"Presentación visual pensada para resaltar producto y estilo.", mediaType:"image", src:"img/IngeniosityImagen Réplica.jpg" },
+        { title:"Memoria Anual", category:"Editorial", desc:"Pieza informativa con jerarquía clara y tratamiento corporativo.", mediaType:"image", src:"img/IngeniniosityImagen Original.jpg" }
+      ]},
+      { id:"packaging", title:"Diseño de Empaque", subtitle:"Propuestas visuales para producto y presentación física.", items:[
+        { title:"Empaque de Cafe", category:"Packaging", desc:"Sistema visual con presencia premium y lectura de anaquel.", mediaType:"image", src:"img/epikzimpresiones.jpg" },
+        { title:"Caja de Producto", category:"Packaging", desc:"Diseño de empaque con enfoque en experiencia y acabado limpio.", mediaType:"image", src:"img/lux.jpg" },
+        { title:"Etiqueta", category:"Packaging", desc:"Solución visual para pieza de producto con detalle gráfico.", mediaType:"image", src:"img/Bestia.jpg" },
+        { title:"Packaging Completo", category:"Packaging", desc:"Conjunto de materiales visuales aplicados a marca y producto.", mediaType:"image", src:"img/Panthro_2.jpg" }
+      ]},
+      { id:"social", title:"Publicidad y Social Media", subtitle:"Contenido para campañas, lanzamientos y presencia digital.", items:[
+        { title:"Anuncio Digital", category:"Social media", desc:"Pieza promocional de alto contraste y lectura rápida.", mediaType:"image", src:"img/DiseñoGraficoRegístrate Hoy.jpg" },
+        { title:"Post para Instagram", category:"Social media", desc:"Formato adaptable para comunicación visual en redes.", mediaType:"image", src:"img/DiseñoGraficoCategorías.jpg" },
+        { title:"Historia", category:"Social media", desc:"Diseño vertical optimizado para interacción inmediata.", mediaType:"image", src:"img/ChatGPT Image 17 jun 2026, 04_49_03 p.m..png" },
+        { title:"Campaña Digital", category:"Social media", desc:"Serie visual para piezas promocionales y campañas breves.", mediaType:"image", src:"img/Quantum_2.jpg" }
+      ]}
+    ];
+    const professionalExperience = [
+      { period:"2022 - 2023", title:"Soft Controls International", role:"Especialista en contenido audiovisual", desc:"Producción y edición de contenido audiovisual con enfoque comercial y narrativo.", accent:"purple" },
+      { period:"2016 - 2017", title:"Canal 53 TVUni", role:"Colaborador en gráficos para televisión", desc:"Diseño de piezas visuales para continuidad, transmisión y apoyo a contenido televisivo.", accent:"orange" },
+      { period:"2025 - Actualidad", title:"Docente Lic. en Diseño Gráfico y Animación", role:"UANL - UNIVERSIDAD LUX - TECMILENIO", desc:"Acompañamiento académico en diseño, animación y proyectos visuales con enfoque profesional.", accent:"purple" }
+    ];
+    const complementaryProjects = [
+      { title:"Cute Digital Media", category:"Diseño web", desc:"Ejercicio de presentación digital con una estructura limpia y ordenada.", src:"img/pagwebCuteMedia.jpg" },
+      { title:"Mi Primer Portafolio", category:"Archivo personal", desc:"Versión previa del portafolio como punto de evolución del proyecto.", src:"img/primerweb.jpg" },
+      { title:"Modelado 3D", category:"Trabajo secundario", desc:"Área complementaria que se mantiene, pero sin protagonismo dentro del sitio.", src:"img/modelado.jpg" }
+    ];
+
+    const esc = (v) => String(v).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;");
+    const ico = (n) => `<span class="material-symbols-outlined">${n}</span>`;
+    const link = (href, text, extra="") => `<a href="${href}" data-nav="1" class="${extra}">${text}</a>`;
+        const header = () => `
+      <header class="header">
+        <div class="container header-inner">
+          <a class="brand" href="/" data-nav="1"><div class="brand-mark">JP</div><div><div class="brand-name">JOSUÉ PUENTE</div><div class="brand-role">Lic. Multimedia y Animación Digital</div></div></a>
+          <nav class="nav">
+            ${link("/", "Inicio")}
+            ${link("/video", "Video")}
+            ${link("/diseno", "Diseño")}
+            <button type="button" data-scroll="contacto">Contacto</button>
+          </nav>
+          <button class="nav-mobile-btn" type="button" data-toggle-menu>${ico("menu")}</button>
+        </div>
+        <div class="mobile-menu" data-mobile-menu>
+          <div class="container mobile-menu-inner">
+            <div class="mobile-menu-head">
+              <a class="brand" href="/" data-nav="1"><div class="brand-mark">JP</div><div><div class="brand-name">JOSUÉ PUENTE</div><div class="brand-role" style="display:block;">Lic. Multimedia y Animación Digital</div></div></a>
+              <button class="nav-mobile-btn" type="button" data-toggle-menu>${ico("close")}</button>
+            </div>
+            <div class="mobile-menu-nav">
+              <a class="mobile-menu-link" href="/" data-nav="1">${ico("home")} <span>Inicio</span></a>
+              <a class="mobile-menu-link" href="/video" data-nav="1">${ico("play_circle")} <span>Video</span></a>
+              <a class="mobile-menu-link" href="/diseno" data-nav="1">${ico("edit")} <span>Diseño</span></a>
+              <a class="mobile-menu-link" href="#contacto" data-scroll="contacto">${ico("mail")} <span>Contacto</span></a>
+            </div>
+            <div class="mobile-menu-divider"></div>
+            <div class="mobile-menu-actions">
+              <a class="cv-btn" href="CV/CVJosuePuente2026.pdf" download="CV_Josue_Puente.pdf">Descargar CV</a>
+            </div>
+            
+          </div>
+        </div>
+      </header>`;
+    const hero = () => `
+      <section class="hero container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="pill">Portafolio</div>
+            <h1><span style="display:block;">Editor de Video</span><span class="gradient-text" style="display:block;">Diseñador Gráfico</span></h1>
+            <p class="subtle" style="font-size:18px;margin-top:24px;">Producción audiovisual y diseño visual para marcas, agencias y proyectos que necesitan una presentación más sólida y moderna.</p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="/video" data-nav="1">Ver Portafolio de Video ${ico("arrow_forward")}</a>
+              <a class="btn btn-secondary" href="/diseno" data-nav="1">Ver Portafolio de Diseño ${ico("brush")}</a>
+            </div>
+          </div>
+        </div>
+      </section>`;
+    const specials = () => `
+      <section class="section section-block">
+        <div class="container">
+          <div class="specials">
+            ${specialties.map((s) => `<article class="special-card"><div class="special-icon">${ico(s.icon)}</div><div><h3>${esc(s.title)}</h3><p>${esc(s.desc)}</p></div></article>`).join("")}
+          </div>
+        </div>
+      </section>`;
+
+    const footer = () => `
+      <footer class="footer" id="contacto">
+        <div class="container footer-grid">
+          <section class="footer-box">
+            <h3>SOBRE MÍ</h3>
+            <div class="about-row">
+              <img class="avatar" src="img/Yo.png" alt="Josué Puente" />
+              <p>Diseñador multimedia con experiencia en producción audiovisual, edición de video, motion graphics y diseño gráfico. Me apasiona contar historias visuales que conectan y generan impacto.</p>
+            </div>
+          </section>
+          <section class="footer-box">
+            <h3>HERRAMIENTAS</h3>
+            <div class="tool-grid">${tools.map(([t,c]) => `<div class="tool ${c}">${t}</div>`).join("")}</div>
+          </section>
+          <section class="footer-box">
+            <h3>CONTACTO</h3>
+            <div class="contact-list">
+              <div class="contact-item">${ico("mail")}dari.puentec@gmail.com</div>
+              <div class="contact-item">${ico("call")}+52 81 2467 8343</div>
+              <div class="contact-item">${ico("location_on")}Monterrey, México</div>
+            </div>
+            <a class="cv-btn" href="CV/CVJosuePuente2026.pdf" download="CV_Josue_Puente.pdf">DESCARGAR CV</a>
+          </section>
+         
+        </div>
+      </footer>`;
+
+    const sectionTitle = (eyebrow, title, subtitle, center=false) => `
+      <div class="${center ? "container" : ""}">
+        <div class="eyebrow" style="${center ? "text-align:center;" : ""}">${esc(eyebrow)}</div>
+        <h2 class="title" style="${center ? "text-align:center;" : ""}">${esc(title)}</h2>
+        <p class="subtle" style="${center ? "max-width:880px;margin:16px auto 0;text-align:center;" : "max-width:880px;margin:16px 0 0;"}">${esc(subtitle)}</p>
+      </div>`;
+    const videoShell = (item, ratio="wide", showBadge=true) => `
+      <div class="video-shell ratio-${ratio}" data-video-shell>
+        <video data-video-media src="${item.src}" poster="${item.poster || ""}" autoplay muted loop playsinline></video>
+         <div class="video-overlay">
+          <div class="video-top">
+            <button type="button" class="video-btn video-btn-small" data-video-sound aria-label="Activar sonido">${ico("volume_off")}</button>
+            <button type="button" class="video-btn" data-video-toggle aria-label="Pausar video">${ico("pause")}</button>
+          </div>
+          <div class="video-progress">
+            <span class="video-time" data-video-time>0:00</span>
+            <input type="range" data-video-seek min="0" max="100" value="0" step="0.1" aria-label="Buscar en el video">
+          </div>
+        </div>
+      </div>`;
+    const mediaCard = (item, showCategory=true) => `
+      <article class="project-card hover-card">
+        ${item.mediaType === "video" ? videoShell(item,"wide",showCategory) : `<div class="thumb"><img src="${item.src}" alt="${esc(item.title)}"></div>`}
+        <div class="project-body"><h3>${esc(item.title)}</h3><p>${esc(item.desc)}</p></div>
+      </article>`;
+    const reelCard = (item, placement="portrait", showCategory=true) => `
+      <article class="project-card hover-card reel-card reel-${placement}">
+        ${item.mediaType === "video" ? videoShell(item, placement === "portrait" ? "portrait" : "square", showCategory) : `<div class="thumb reel-thumb reel-${placement}"><img src="${item.src}" alt="${esc(item.title)}"></div>`}
+        <div class="project-body">
+          <h3>${esc(item.title)}</h3>
+          <p>${esc(item.desc)}</p>
+         </div>
+      </article>`;
+    const reelsMosaic = (items, showCategory=true) => `
+      <div class="reels-layout">
+        
+        <div class="reels-mosaic">
+          ${items.map((item) => reelCard(item, "portrait", showCategory)).join("")}
+        </div>
+      </div>`;
+    const projectGrid = (items) => `<div class="project-grid container">${items.map(mediaCard).join("")}</div>`;
+    const experienceCard = (item) => `
+      <div class="panel timeline hover-card" style="position:relative;overflow:hidden;padding:20px 18px 18px 22px;">
+        <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,${item.accent==="orange"?"var(--orange)":"var(--purple)"},rgba(255,255,255,.2));"></div>
+        <div style="padding-left:4px;">
+          <div style="font-size:12px;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:rgba(244,241,255,.45);">${esc(item.period)}</div>
+          <h3 class="font-display" style="margin-top:8px;font-size:22px;">${esc(item.title)}</h3>
+          <div style="margin-top:6px;font-size:14px;font-weight:700;color:#ddd6fe;">${esc(item.role)}</div>
+          <p style="margin-top:12px;color:var(--muted);line-height:1.7;">${esc(item.desc)}</p>
+        </div>
+      </div>`;
+    const timeline = (items) => `<div class="container timeline-grid">${items.map(experienceCard).join("")}</div>`;
+    const routeHero = (eyebrow, title, subtitle, primaryText, primaryRoute, accent="purple", secondaryText="Volver al inicio", secondaryRoute="/", previewMode="images", previewSrc="") => `
+      <section class="section">
+        <div class="container panel" style="padding:24px;border-radius:32px;">
+          <div class="route-hero-grid${previewMode === "video" ? " route-hero-video" : ""}" style="display:grid;gap:20px;grid-template-columns:1.2fr .8fr;grid-template-areas:'copy preview' 'actions preview';align-items:start;">
+            <div class="route-copy" style="grid-area:copy;">
+              <div class="eyebrow" style="color:${accent==="orange"?"#fdba74":"#c4b5fd"};">${esc(eyebrow)}</div>
+              <h1 class="title" style="font-size:clamp(2.8rem,6vw,4.8rem);margin-top:10px;">${esc(title)}</h1>
+              <p class="subtle" style="margin-top:14px;max-width:820px;">${esc(subtitle)}</p>
+            </div>
+            <div class="route-preview" style="grid-area:preview;${previewMode==="video" ? "" : "display:grid;gap:14px;grid-template-columns:1fr 1fr;"}">
+             ${previewMode==="video"
+? `<div class="video-shell ratio-wide" data-video-shell>
+    <video data-video-media src="${previewSrc}" poster="img/IA.jpg" autoplay muted loop playsinline></video>
+    <div class="video-overlay">
+      <div class="video-top">
+        <button type="button" class="video-btn video-btn-small" data-video-sound aria-label="Activar sonido">${ico("volume_off")}</button>
+        <button type="button" class="video-btn" data-video-toggle aria-label="Pausar video">${ico("pause")}</button>
+      </div>
+      <div class="video-progress">
+        <span class="video-time" data-video-time>0:00</span>
+        <input type="range" data-video-seek min="0" max="100" value="0" step="0.1" aria-label="Buscar en el video">
+      </div>
+    </div>
+  </div>`
+: `<img src="img/twitch2.jpg"
+     alt="Preview"
+     class="hero-design-image">`
+}  </div>
+            <div class="cta-row route-actions" style="grid-area:actions;margin-top:0;">
+              <a class="btn btn-primary" href="${primaryRoute}" data-nav="1">${esc(primaryText)} ${ico("arrow_forward")}</a>
+              <a class="btn btn-secondary" href="${secondaryRoute}" data-nav="1">${esc(secondaryText)}</a>
+            </div>
+          </div>
+        </div>
+      </section>`;
+        const sectionsBlock = (sections, showCategory=true) => sections.map((section) => `
+      <section class="section">
+        <div class="container">
+          <div style="display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px;">
+            <div><h2 class="font-display" style="margin:0;font-size:clamp(1.6rem,3vw,2.5rem);font-weight:800;">${esc(section.title)}</h2><p class="subtle" style="margin:8px 0 0;">${esc(section.subtitle)}</p></div>
+          </div>
+          ${section.id==="shorts" ? reelsMosaic(section.items, showCategory) : section.id==="vertical" ? `<div class="vertical-grid">${section.items.map((item) => reelCard(item, "portrait", showCategory)).join("")}</div>` : `<div class="project-grid">${section.items.map((item) => mediaCard(item, showCategory)).join("")}</div>`}
+        </div>
+      </section>
+    `).join("");
+    
+ const renderVideo = () => `${header()}<main class="container">${routeHero(
+" ",
+"Edición de Video, Motion Graphics",
+"",
+"Ver Portafolio de Diseño",
+"/diseno",
+"purple",
+"Volver al inicio",
+"/",
+"video",
+"img/METODOLOGIA_DOCENTE.mp4"
+)}${sectionsBlock(videoSections,false)}
+<section class="section">${footer()}`;
+    const renderHome = () => `${header()}<main class="container">${hero()}<section class="section">${sectionTitle("Experiencia profesional","Trayectoria"," ")}${timeline(professionalExperience)}</section></main>${footer()}`;
+    const renderDesign = () => {
+      const selectedKey = new URLSearchParams(location.search).get("project");
+      const selectedProject = getBrandingCase(selectedKey);
+      const mobileMode = isMobileDesign();
+      const brandingMarkup = mobileMode
+        ? (selectedProject ? renderBrandingDetailMobile(selectedProject) : renderBrandingIndexMobile())
+        : brandingCaseStudies.map(renderBrandingStudy).join("");
+      if (mobileMode && selectedProject) {
+        return `${header()}<main class="container">${routeHero("Ruta Dise?o","Branding e Identidad Visual","Casos de estudio completos para branding, con una presentaci?n tipo Behance.", "Ver Portafolio de Video","/video","orange","Volver al inicio","/")}${brandingMarkup}<div class="lightbox" data-branding-modal hidden></div><div class="design-modal" data-design-modal hidden></div></main>${footer()}`;
+      }
+      return `${header()}<main class="container">${routeHero("","Branding e Identidad Visual"," ", "Ver Portafolio de Video","/video","orange","Volver al inicio","/","video","img/introportafolio.mp4")}${brandingMarkup}${renderDesignCategory(webDesignSection)}<div class="lightbox" data-branding-modal hidden></div><div class="design-modal" data-design-modal hidden></div></main>${footer()}`;
+    };
+    const designRegistry = {};
+    const designModalRoot = () => document.querySelector("[data-design-modal]");
+    const closeDesignModal = () => {
+      const modal = designModalRoot();
+      if (!modal) return;
+      modal.hidden = true;
+      modal.innerHTML = "";
+      document.body.classList.remove("modal-open");
+    };
+    const openDesignModal = (key) => {
+      const project = designRegistry[key];
+      const modal = designModalRoot();
+      if (!project || !modal) return;
+      document.body.classList.add("modal-open");
+      if (project.type === "web") {
+        modal.innerHTML = `
+          <div class="design-modal-backdrop" data-design-close></div>
+          <div class="design-modal-panel">
+            <div class="design-modal-head" style="justify-content:flex-end;padding:14px 14px 0;border-bottom:0;">
+              <button class="modal-close" type="button" data-design-close>${ico("close")}</button>
+            </div>
+            <div class="browser-shell">
+              <div class="browser-top">
+                <div class="browser-controls"><span></span><span></span><span></span></div>
+                <div class="browser-address" data-browser-address></div>
+                <a class="browser-newtab" data-browser-newtab target="_blank" rel="noreferrer">Abrir pestaña nueva</a>
+              </div>
+              <iframe class="browser-frame" data-browser-frame title="${project.title}"></iframe>
+            </div>
+            <div class="web-tabs" data-web-tabs></div>
+          </div>`;
+        modal.hidden = false;
+        const frame = modal.querySelector("[data-browser-frame]");
+        const address = modal.querySelector("[data-browser-address]");
+        const newTab = modal.querySelector("[data-browser-newtab]");
+        const tabs = modal.querySelector("[data-web-tabs]");
+        const setSite = (site) => {
+          if (!site) return;
+          frame.src = site.url;
+          address.textContent = site.url;
+          newTab.href = site.url;
+          tabs.querySelectorAll("button").forEach((button) => button.classList.toggle("active", button.dataset.url === site.url));
+        };
+        tabs.innerHTML = project.urls.map((site, index) => `<button type="button" class="web-tab${index === 0 ? " active" : ""}" data-url="${site.url}">${site.label}</button>`).join("");
+        tabs.querySelectorAll("button").forEach((button) => button.addEventListener("click", () => setSite(project.urls.find((site) => site.url === button.dataset.url))));
+        setSite(project.urls[0]);
+      } else {
+        modal.innerHTML = `
+          <div class="design-modal-backdrop" data-design-close></div>
+          <div class="design-modal-panel">
+            <div class="design-modal-head">
+              <div>
+                <div class="eyebrow">Galería</div>
+                <h3 class="font-display">${project.title}</h3>
+                <p class="subtle">${project.description}</p>
+              </div>
+              <button class="modal-close" type="button" data-design-close>${ico("close")}</button>
+            </div>
+            <div class="gallery-layout">
+              <div class="gallery-main"><img src="${project.gallery[0]}" alt="${project.title}"></div>
+              <div class="gallery-strip">${project.gallery.map((src, index) => `<button type="button" class="gallery-thumb${index === 0 ? " active" : ""}" data-gallery-thumb="${src}"><img src="${src}" alt="${project.title}"></button>`).join("")}</div>
+            </div>
+          </div>`;
+        modal.hidden = false;
+        const mainImage = modal.querySelector(".gallery-main img");
+        modal.querySelectorAll("[data-gallery-thumb]").forEach((thumb) => thumb.addEventListener("click", () => {
+          mainImage.src = thumb.dataset.galleryThumb;
+          modal.querySelectorAll(".gallery-thumb").forEach((item) => item.classList.toggle("active", item === thumb));
+        }));
+      }
+    };
+    const renderDesignCard = (section, item, index) => {
+      const key = `${section.id}:${index}`;
+      designRegistry[key] = item;
+      return `<button type="button" class="design-card hover-card" data-design-open="${key}"><div class="design-card-media"><img src="${item.cover}" alt="${item.title}"></div><div class="design-card-body"><h3>${item.title}</h3><p>${item.description}</p></div></button>`;
+    };
+    const renderDesignCategory = (section) => `
+      <section class="section">
+        <div class="container">
+          <div class="design-section-head">
+            <div>
+              <div class="eyebrow${section.title === "Diseño Web y UI" ? " design-web-ui-eyebrow" : ""}">${section.title}</div>
+              <p class="subtle" style="margin:10px 0 0;">${section.subtitle}</p>
+            </div>
+          </div>
+          <div class="design-grid" style="grid-template-columns:repeat(${Math.min(4, section.items.length)},minmax(0,1fr));">${section.items.map((item, index) => renderDesignCard(section, item, index)).join("")}</div>
+        </div>
+      </section>`;
+    const brandingCaseStudies = [
+         {
+        key: "kiwimagen",
+        title: "Kiwimagen",
+        summary: "Diseño de identidad visual y producción fotográfica por Josué Puente.",
+        gallery: ["img/KiwimagenB1.png", "img/KiwimagenB2.png", "img/KiwimagenB3.png"]
+      },
+        {
+        key: "bolaria",
+        title: "Bolaria",
+        summary: "Rebranding de Épicas Impresiones orientado a una identidad más sólida.",
+        gallery: ["img/BolariaB1.png", "img/BolariaB2.png", "img/BolariaB3.png"]
+      },
+  
+        {
+        key: "epicas-impresiones",
+        title: "Épicas Impresiones",
+        summary: "Identidad visual desarrollada para marca de impresión 3D.",
+        gallery: ["img/EpikzB1.png", "img/EpikzB2.png", "img/EpikzB3.png"]
+      },
+     
+      {
+        key: "nutriactivate",
+        title: "NutriActivate",
+        summary: "Diseño Gráfico para programa del Canal53 TVUni realizado en 2016.",
+        gallery: ["img/NutriB1.png", "img/NutriB2.png", "img/NutriB3.png"]
+      }
+    ];
+    const webDesignSection = {
+      title: "Diseño Web y UI",
+      subtitle: "Diseño y desarrollo de interfaces web.",
+      items: [
+        { key:"portafolio-personal", title:"Portafolio V1", type:"web", cover:"img/primerweb.jpg", description:"Primera versión de mi portafolio digital enfocada en diseño, desarrollo web y contenido creativo.", urls:[
+          { label:"Portafolio V1", url:"https://josuepuente.github.io/PortafolioV1/" },
+          { label:"Cute Digital Media", url:"https://josuepuente.github.io/Prueba-de-seleccion-CuteDigitalMedia/" },
+          { label:"Portafolio V2", url:"https://josuepuente.github.io/PortafolioV2/" }
+        ] },
+        { key:"landing-pages", title:"Cute Digital Media", type:"web", cover:"img/pagwebCuteMedia.jpg", description:"Diseño web conceptual para una agencia digital.", urls:[
+          { label:"Cute Digital Media", url:"https://josuepuente.github.io/Prueba-de-seleccion-CuteDigitalMedia/" },
+         { label:"Portafolio V1", url:"https://josuepuente.github.io/PortafolioV1/" },
+         { label:"Portafolio V2", url:"https://josuepuente.github.io/PortafolioV2/" }
+        ] },
+        { key:"portafolio-v2", title:"Portafolio V2", type:"web", cover:"img/segundaweb.jpg", description:"Rediseño de mi sitio mejorando la presentación de proyectos y la experiencia de navegación.", urls:[
+          { label:"Portafolio V2", url:"https://josuepuente.github.io/PortafolioV2/" },
+          { label:"Portafolio V1", url:"https://josuepuente.github.io/PortafolioV1/" },
+          { label:"Cute Digital Media", url:"https://josuepuente.github.io/Prueba-de-seleccion-CuteDigitalMedia/"}
+        
+        ] }
+      ]
+    };
+    const getBrandingCase = (key) => brandingCaseStudies.find((project) => project.key === key);
+    const isMobileDesign = () => window.innerWidth <= 768;
+    const brandingModalRoot = () => document.querySelector("[data-branding-modal]");
+    const closeBrandingModal = () => {
+      const modal = brandingModalRoot();
+      if (!modal) return;
+      modal.hidden = true;
+      modal.innerHTML = "";
+      document.body.classList.remove("modal-open");
+    };
+    const openBrandingModal = (projectKey, selectedIndex = 0) => {
+      const project = getBrandingCase(projectKey);
+      const modal = brandingModalRoot();
+      if (!project || !modal) return;
+      const safeIndex = Math.max(0, Math.min(selectedIndex, project.gallery.length - 1));
+      modal.innerHTML = `
+        <div class="lightbox-backdrop" data-branding-close></div>
+      <div class="lightbox-panel">
+          <div class="lightbox-head" style="justify-content:flex-end;">
+            <button type="button" class="lightbox-close" data-branding-close>${ico("close")}</button>
+          </div>
+          <div class="branding-project-story" data-branding-story>
+            ${project.gallery.map((src, index) => `<article class="branding-story-item" data-branding-shot="${index}" id="branding-${project.key}-${index}"><img src="${src}" alt="${project.title} ${index + 1}"></article>`).join("")}
+          </div>
+        </div>`;
+      modal.hidden = false;
+      document.body.classList.add("modal-open");
+      const target = modal.querySelector(`[data-branding-shot="${safeIndex}"]`);
+      if (target) requestAnimationFrame(() => target.scrollIntoView({behavior:"auto", block:"start", inline:"nearest"}));
+    };
+    const renderBrandingStudy = (project) => `
+      <article class="branding-study panel" id="${project.key}">
+        <div class="study-head">
+          <div>
+            <div class="eyebrow">Branding e Identidad Visual</div>
+            <h3>${project.title}</h3>
+          </div>
+          <p class="study-lead">${project.summary}</p>
+        </div>
+        <div class="study-gallery">
+          ${project.gallery.map((src, index) => `<button type="button" class="study-shot" data-branding-image data-project="${project.key}" data-index="${index}" data-alt="${project.title}"><img src="${src}" alt="${project.title}"></button>`).join("")}
+        </div>
+      </article>`;
+    const renderBrandingIndexMobile = () => `
+      <section class="section">
+        <div class="container">
+          <div class="design-section-head">
+            <div class="eyebrow">Branding e Identidad Visual</div>
+            <p class="subtle" style="margin:10px 0 0;">Toca un proyecto para abrir su caso de estudio completo.</p>
+          </div>
+          <div class="study-mobile-list">
+            ${brandingCaseStudies.map((project) => `
+              <a class="study-mobile-card hover-card" href="/diseno?project=${project.key}" data-nav="1">
+                <img src="${project.gallery[0]}" alt="${project.title}">
+                <div>
+                  <div class="eyebrow">${project.title}</div>
+                  <h3>${project.summary}</h3>
+                  <p>Ver caso de estudio</p>
+                </div>
+              </a>
+            `).join("")}
+          </div>
+        </div>
+      </section>`;
+    const renderBrandingDetailMobile = (project) => `
+      <section class="section project-detail">
+        <div class="container">
+          <a class="btn btn-secondary project-detail-back" href="/diseno" data-nav="1">Volver a Diseño</a>
+          ${renderBrandingStudy(project)}
+        </div>
+      </section>`;
+    const formatTime = (seconds) => {
+      if (!Number.isFinite(seconds) || seconds < 0) return "0:00";
+      const minutes = Math.floor(seconds / 60);
+      const remainingSeconds = Math.floor(seconds % 60);
+      return `${minutes}:${String(remainingSeconds).padStart(2,"0")}`;
+    };
+    const bindVideoControls = () => {
+      document.querySelectorAll("[data-video-shell]").forEach((shell) => {
+        if (shell.dataset.bound === "1") return;
+        shell.dataset.bound = "1";
+        const video = shell.querySelector("[data-video-media]");
+        const sound = shell.querySelector("[data-video-sound]");
+        const toggle = shell.querySelector("[data-video-toggle]");
+        const seek = shell.querySelector("[data-video-seek]");
+        const time = shell.querySelector("[data-video-time]");
+        const sync = () => {
+          if (!video || !seek || !time) return;
+          const duration = video.duration || 0;
+          seek.value = duration ? (video.currentTime / duration) * 100 : 0;
+          time.textContent = formatTime(video.currentTime || 0);
+          if (toggle) toggle.innerHTML = video.paused ? `${ico("play_arrow")}` : `${ico("pause")}`;
+          if (sound) {
+            const isMuted = video.muted || video.volume === 0;
+            sound.innerHTML = `${ico(isMuted ? "volume_off" : "volume_up")}`;
+            sound.setAttribute("aria-label", isMuted ? "Activar sonido" : "Silenciar");
+          }
+        };
+        if (video) {
+          video.addEventListener("loadedmetadata", sync);
+          video.addEventListener("timeupdate", sync);
+          video.addEventListener("play", sync);
+          video.addEventListener("pause", sync);
+          video.addEventListener("ended", () => { video.currentTime = 0; video.pause(); sync(); });
+        }
+        if (toggle && video) {
+          toggle.addEventListener("click", (event) => {
+            event.preventDefault();
+            if (video.paused) video.play();
+            else video.pause();
+          });
+        }
+        if (sound && video) {
+          sound.addEventListener("click", (event) => {
+            event.preventDefault();
+            video.muted = !video.muted;
+            if (!video.muted && video.volume === 0) video.volume = 1;
+            sync();
+          });
+        }
+        if (video) {
+          video.addEventListener("click", () => {
+            if (video.paused) video.play();
+            else video.pause();
+          });
+        }
+        if (seek && video) {
+          seek.addEventListener("input", () => {
+            const duration = video.duration || 0;
+            if (!duration) return;
+            video.currentTime = (seek.value / 100) * duration;
+            if (time) time.textContent = formatTime(video.currentTime);
+          });
+          seek.addEventListener("pointerdown", () => video.pause());
+          seek.addEventListener("change", () => { if (video.paused) video.play(); });
+        }
+        sync();
+      });
+    };
+
+    function render(){ closeDesignModal(); closeBrandingModal(); const path = location.pathname; if(path==="/video") app.innerHTML = renderVideo(); else if(path==="/diseno") app.innerHTML = renderDesign(); else app.innerHTML = renderHome(); bindVideoControls(); }
+    document.addEventListener("click",(event)=>{
+      const nav = event.target.closest("[data-nav]");
+      if(nav){
+        event.preventDefault();
+        closeDesignModal();
+        closeBrandingModal();
+        history.pushState({}, "", nav.getAttribute("href"));
+        render();
+        window.scrollTo(0,0);
+        const menu=document.querySelector("[data-mobile-menu]");
+        if(menu) menu.classList.remove("open");
+        document.body.classList.remove("menu-open");
+      }
+      const scroll = event.target.closest("[data-scroll]");
+      if(scroll){
+        event.preventDefault();
+        closeDesignModal();
+        closeBrandingModal();
+        const target=document.getElementById(scroll.getAttribute("data-scroll"));
+        if(target) target.scrollIntoView({behavior:"smooth"});
+        const menu=document.querySelector("[data-mobile-menu]");
+        if(menu) menu.classList.remove("open");
+        document.body.classList.remove("menu-open");
+      }
+      const toggle = event.target.closest("[data-toggle-menu]");
+      if(toggle){
+        const menu=document.querySelector("[data-mobile-menu]");
+        if(menu){
+          menu.classList.toggle("open");
+          document.body.classList.toggle("menu-open", menu.classList.contains("open"));
+        }
+      }
+      const brandingImage = event.target.closest("[data-branding-image]");
+      if(brandingImage){
+        event.preventDefault();
+        openBrandingModal(brandingImage.getAttribute("data-project"), Number(brandingImage.getAttribute("data-index") || 0));
+      }
+      const brandingClose = event.target.closest("[data-branding-close]");
+      if(brandingClose || event.target.classList.contains("lightbox-backdrop")){
+        event.preventDefault();
+        closeBrandingModal();
+      }
+      const designOpen = event.target.closest("[data-design-open]");
+      if(designOpen){
+        event.preventDefault();
+        openDesignModal(designOpen.getAttribute("data-design-open"));
+      }
+      const designClose = event.target.closest("[data-design-close]");
+      if(designClose){
+        event.preventDefault();
+        closeDesignModal();
+      }
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeDesignModal();
+        closeBrandingModal();
+      }
+    });
+    window.addEventListener("popstate", render);
+    window.addEventListener("resize", () => {
+      if (location.pathname === "/diseno") render();
+    });
+    if(!["/","/video","/diseno"].includes(location.pathname)) history.replaceState({}, "", "/");
+    render();
+  </script>
+</body>
+</html>
