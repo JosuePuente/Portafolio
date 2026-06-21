@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página no encontrada | Josué Puente</title>
+  <style>
+    :root{
+      color-scheme: dark;
+      --bg:#06060a;
+      --text:#f4f1ff;
+      --muted:rgba(244,241,255,.72);
+      --line:rgba(255,255,255,.1);
+      --accent:#a855f7;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      font-family:Inter,Arial,sans-serif;
+      color:var(--text);
+      background:radial-gradient(circle at top left,rgba(168,85,247,.18),transparent 24%),linear-gradient(180deg,#06060a 0%,#090912 100%);
+    }
+    .card{
+      width:min(680px,calc(100% - 32px));
+      padding:32px;
+      border:1px solid var(--line);
+      border-radius:28px;
+      background:rgba(255,255,255,.04);
+      box-shadow:0 30px 90px rgba(0,0,0,.35);
+    }
+    h1{
+      margin:0;
+      font-family:"Space Grotesk",Inter,Arial,sans-serif;
+      font-size:clamp(2rem,5vw,3rem);
+      line-height:1;
+    }
+    p{color:var(--muted);line-height:1.7}
+    .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:44px;
+      padding:0 16px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.05);
+      color:#fff;
+      text-decoration:none;
+      font-weight:700;
+    }
+    a.primary{
+      background:linear-gradient(90deg,var(--accent),#7c3aed);
+      border-color:transparent;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>Página no encontrada</h1>
+    <p>La ruta solicitada no existe en este sitio.</p>
+    <div class="links">
+      <a class="primary" href="index.html">Ir al inicio</a>
+      <a href="video.html">Portafolio de Video</a>
+      <a href="diseno.html">Portafolio de Diseño</a>
+    </div>
+  </main>
+</body>
+</html>
